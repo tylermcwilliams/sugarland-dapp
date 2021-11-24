@@ -62,8 +62,7 @@ export default defineComponent({
   },
   setup() {
     const { SugarPrice, getSugarPrice } = sugPrice();
-    console.log(" Test ", sugPrice());
-    console.log(" Price: ", SugarPrice.value);
+
     const utilLinks = [
       {
         page: "/",

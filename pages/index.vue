@@ -1,23 +1,23 @@
 <template>
   <section class="flex-row h-screen w-screen">
     <div class="flex-col justify-center items-center">
-      <h1 class="mt-8 insetG">Here you can swap your token</h1>
+      <h1 class="mt-8 insetG">Sugarland Dashboard</h1>
       <div class="collectionsWrapper pb-10 py-4 flex-row">
         <div class="dataBox flex-row">
           <DataTab>
             <h1>Current Price:</h1>
+            <span>{{ SugarPrice }}</span>
+          </DataTab>
+          <DataTab>
+            <h1>Holders:</h1>
             <span>0.00017230725</span>
           </DataTab>
           <DataTab>
-            <h1>Current Price:</h1>
+            <h1>Circulating:</h1>
             <span>0.00017230725</span>
           </DataTab>
           <DataTab>
-            <h1>Current Price:</h1>
-            <span>0.00017230725</span>
-          </DataTab>
-          <DataTab>
-            <h1>Current Price:</h1>
+            <h1>Market Cap:</h1>
             <span>0.00017230725</span>
           </DataTab>
         </div>
@@ -32,6 +32,7 @@ import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import AbyPopup from "~/components/modals/AbyPopup.vue";
 import { useModal } from "~/composables/useModal";
+import sugPrice from "~/composables/getSugarPrice.ts";
 /* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
@@ -40,12 +41,21 @@ export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
 
   setup(mixins) {
+    const { SugarPrice, getSugarPrice } = sugPrice();
+
     const { showMintingModal } = useModal(AbyPopup);
 
     let Details = ref([mixins]);
     /* console.log(Details.value); */
 
-    return { Details, showMintingModal, NuxtSSRScreenSize, mixins };
+    return {
+      Details,
+      showMintingModal,
+      NuxtSSRScreenSize,
+      mixins,
+      SugarPrice,
+      getSugarPrice,
+    };
   },
   components: { PopFromShadow },
 });
@@ -93,6 +103,11 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
+}
+
+span {
+  font-weight: 200;
+  font-size: 14px;
 }
 
 .dataBox {
