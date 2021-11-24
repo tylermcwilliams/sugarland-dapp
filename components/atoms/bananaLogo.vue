@@ -2,7 +2,7 @@
   <div class="flex justify-center">
     <img
       class="logoBanana"
-      src="https://beystudio.it/wp-content/uploads/2020/12/DIGITAL.svg"
+      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Ext.png"
       alt=""
     />
   </div>
@@ -31,7 +31,7 @@ export default defineComponent({
   animation: rotate3d 5s linear infinite;
 }
 
-@keyframes rotate3d {
+/* @keyframes rotate3d {
   0% {
     transform: perspective(1000px) rotateY(0deg);
   }
@@ -39,5 +39,5 @@ export default defineComponent({
   100% {
     transform: perspective(1000px) rotateY(360deg);
   }
-}
+} */
 </style>

@@ -2,7 +2,7 @@
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
     <NuxtLink v-if="!collapsed" to="/"
       ><BananaLogo class="beyBananaLogo" />
-      <p class="-mt-8 pb-12">BeY Verse</p></NuxtLink
+      <!-- <p class="-mt-8 pb-12">BeY Verse</p> --></NuxtLink
     >
     <div class="displayMobile">
       <div v-if="!collapsed" @click="toggleSidebar">
@@ -33,8 +33,8 @@
         v-if="!collapsed"
         class="copy"
         target="_blank"
-        href="https://beystudio.it/"
-        >Dreamed by <strong>BeY Studio</strong></a
+        href="https://www.sugarlandcoin.com/"
+        ><!-- <strong>Sugarland</strong> --></a
       >
     </div>
   </div>
@@ -59,7 +59,7 @@ export default defineComponent({
     const utilLinks = [
       {
         page: "/",
-        title: "About",
+        title: "Dashboard",
       },
       {
         page: "/collections",
@@ -67,7 +67,7 @@ export default defineComponent({
       },
       {
         page: "/profile",
-        title: "Profile",
+        title: "Governance",
       },
     ];
     onMounted(() => {
@@ -130,7 +130,7 @@ p {
   border-right-width: 1px;
   border-color: #8424e326;
   margin-right: 20px;
-  background-color: #f1f1f1;
+  background-color: #251c48;
   padding-block-start: 120px;
   transition: all ease 0.3s;
 }
@@ -153,7 +153,7 @@ p {
   font-weight: 200;
   line-height: 23px;
   text-align: center;
-  color: #3a3335;
+  color: #ededed;
 }
 
 .closeIcon {

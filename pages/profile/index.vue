@@ -3,7 +3,7 @@
     <div class="flex-col justify-center items-center">
       <h1 class="mt-8 insetG">Here you can find your collected NFTs</h1>
       <div class="collectionsWrapper pb-10 py-4">
-        <PresenceFullCard
+        <!--  <PresenceFullCard
           class="collectionCard"
           v-for="Preview in Previews"
           :key="Preview.id"
@@ -30,7 +30,7 @@
               placeholder="Discover Collection"
               @clicked="showMintingModal"
           /></PopFromShadow>
-        </PresenceFullCard>
+        </PresenceFullCard> -->
       </div>
       <div class="flex-col align-middle"></div>
     </div>
@@ -74,8 +74,8 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #f1f1f1;
-  color: #3a3335;
+  background-color: #251c48;
+  color: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;

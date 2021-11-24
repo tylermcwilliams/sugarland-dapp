@@ -69,7 +69,7 @@ p {
 .presenceBox {
   height: 120px;
   width: 120px;
-  background: #f1f1f1;
+  background: #251c48;
   box-shadow: 10px 10px 70px #505050, -10px -10px 70px #151515;
   border-radius: 60px;
 }

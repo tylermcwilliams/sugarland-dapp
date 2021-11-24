@@ -2,13 +2,9 @@
   <div class="flex-col justify-center items-center h-screen w-screen">
     <div class="pt-1 wrapper insetG">
       <h1>
-        Hey!👋 You just landed in the <span class="purple">BeY Verse,</span> BeY
-        Studio digital creative hub for blockchain projects.
+        Hey!👋 You just landed in the <span class="purple">Sugar Land</span>
       </h1>
-      <h1 class="pt-10">
-        We love tech and art but most of all we love involving awesome people in
-        making awesome things.
-      </h1>
+      <h1 class="pt-10"></h1>
       <!--       <h1 class="pt-10">
         This is a place where wonderful people in the process of making awesome
         things!
@@ -45,8 +41,8 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #f1f1f1;
-  color: #3a3335;
+  background-color: #251c48;
+  color: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +65,7 @@ h1 {
   font-weight: 200;
   line-height: 23px;
   text-align: center;
-  color: #3a3335;
+  color: #ededed;
   line-height: 1.8;
 }
 
@@ -92,7 +88,7 @@ p {
 }
 
 .purple {
-  color: #8224e3;
+  color: #9034e5;
 }
 
 @media (min-width: 320px) {
