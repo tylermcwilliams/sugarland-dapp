@@ -48,7 +48,6 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
 
@@ -63,7 +62,6 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
 .presenceBox {

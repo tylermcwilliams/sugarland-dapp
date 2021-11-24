@@ -4,23 +4,23 @@
       ><BananaLogo class="beyBananaLogo" />
       <!-- <p class="-mt-8 pb-12">BeY Verse</p> --></NuxtLink
     >
-    <div class="displayMobile">
+    <div class="displayMobile text-left">
       <div v-if="!collapsed" @click="toggleSidebar">
         <NuxtLink
           v-for="link in utilLinks"
           :key="link.title"
-          class="p-2 baseStyle self-center place-self-center"
+          class="p-2 baseStyle self-center text-left"
           :to="link.page"
           >{{ link.title }}</NuxtLink
         >
       </div>
     </div>
-    <div class="displayDesktop">
-      <div v-if="!collapsed">
+    <div class="displayDesktop text-left">
+      <div class="text-left" v-if="!collapsed">
         <NuxtLink
           v-for="link in utilLinks"
           :key="link.title"
-          class="p-2 baseStyle self-center place-self-center"
+          class="p-2 baseStyle self-center"
           :to="link.page"
           >{{ link.title }}</NuxtLink
         >
@@ -60,6 +60,10 @@ export default defineComponent({
       {
         page: "/",
         title: "Dashboard",
+      },
+      {
+        page: "/swap",
+        title: "Sugar Swap",
       },
       {
         page: "/collections",
@@ -112,7 +116,6 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #8224e3 !important;
 }
 .copyWrapper {
@@ -146,10 +149,9 @@ p {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 23px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  line-height: 23px;
+  line-height: 2.5;
   text-align: center;
   color: #ededed;
 }

@@ -8,8 +8,8 @@
           :key="Preview.id"
         >
           <img class="imgCollection" :src="Preview.image" alt="" />
-          <div class="text-left py-4 pb-8">
-            <ul class="text-left">
+          <div class="text-center py-4 pb-8">
+            <ul class="text-center">
               <li>
                 Name:
                 <span class="text-white">{{ Preview.collectionName }}</span>
@@ -89,7 +89,6 @@ div {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -101,13 +100,11 @@ h1 {
 p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #8224e3;
 }
 li {
@@ -116,12 +113,10 @@ li {
 ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
   font-weight: 400;
-  text-align: center;
   color: rgba(255, 255, 255, 0.688);
 }
 
