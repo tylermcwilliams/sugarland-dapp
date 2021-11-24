@@ -34,6 +34,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+h1 {
+  color: #180527;
+}
 .modalBackground {
   position: fixed;
   right: 0;

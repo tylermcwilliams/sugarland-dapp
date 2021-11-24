@@ -63,7 +63,7 @@ export default defineComponent({
       },
       {
         page: "/collections",
-        title: "Collections",
+        title: "NFT Collections",
       },
       {
         page: "/profile",
