@@ -1,0 +1,26 @@
+{
+  "name": "sugarland-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/composition-api": "^0.30.0",
+    "@nuxtjs/svg": "^0.3.0",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-i18n": "^6.28.1",
+    "nuxt-ssr-screen-size": "^1.0.0",
+    "v-click-outside": "^3.1.2"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/tailwindcss": "^4.2.0",
+    "postcss": "^8.3.5"
+  }
+}
