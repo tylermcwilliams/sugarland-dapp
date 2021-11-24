@@ -2,7 +2,9 @@
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
     <NuxtLink v-if="!collapsed" to="/"
       ><BananaLogo class="beyBananaLogo" />
-      <!-- <p class="-mt-8 pb-12">BeY Verse</p> --></NuxtLink
+      <p class="-mt-4 pb-12">
+        $Sugar: <span> ${{ SugarPrice }}</span>
+      </p></NuxtLink
     >
     <div class="displayMobile text-left">
       <div v-if="!collapsed" @click="toggleSidebar">
@@ -41,8 +43,10 @@
 </template>
 
 <script>
+import sugPrice from "~/composables/getSugarPrice.ts";
 import { defineComponent, onMounted } from "@nuxtjs/composition-api";
 import BananaLogo from "~/components/atoms/bananaLogo.vue";
+
 import {
   collapsed,
   closed,
@@ -50,12 +54,16 @@ import {
   sidebarWidth,
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
+
 export default defineComponent({
   name: "SideBar",
   components: {
     BananaLogo,
   },
   setup() {
+    const { SugarPrice, getSugarPrice } = sugPrice();
+    console.log(" Test ", sugPrice());
+    console.log(" Price: ", SugarPrice.value);
     const utilLinks = [
       {
         page: "/",
@@ -74,10 +82,16 @@ export default defineComponent({
         title: "Governance",
       },
     ];
+
     onMounted(() => {
       if (window.innerWidth < 520) {
         toggleSidebar();
       }
+      getSugarPrice();
+      console.log("Prova Prezzo", getSugarPrice());
+      window.setInterval(() => {
+        getSugarPrice();
+      }, 20000);
     });
 
     return {
@@ -87,6 +101,8 @@ export default defineComponent({
       toggleSidebar,
       sidebarWidth,
       sidebarClose,
+      SugarPrice,
+      getSugarPrice,
     };
   },
 });
@@ -97,6 +113,10 @@ export default defineComponent({
 
 
 <style scoped>
+span {
+  color: #fff;
+  margin-left: 5px;
+}
 a.nuxt-link-exact-active {
   color: #8224e3;
 }
@@ -109,7 +129,7 @@ p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 23px;
   text-align: center;
   font-family: "Montserrat", sans-serif;

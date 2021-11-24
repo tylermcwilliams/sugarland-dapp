@@ -1,15 +1,13 @@
 <template>
-  <div class="swapWrapper">
-    <PopFromShadow class="w-52 self-center">
-      <slot></slot>
-    </PopFromShadow>
+  <div class="dataBoxWrapp">
+    <slot></slot>
   </div>
 </template> 
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
-  name: "DataTab",
+  name: "SwapCard",
 
   setup() {
     return {};
@@ -70,16 +68,10 @@ p {
   border-radius: 10px;
   padding-inline: 30px;
   padding-block: 15px;
-}
-
-.swapWrapper {
-  margin-inline: 10px !important;
+  margin-inline: 15px;
 }
 
 .purple {
   color: #8224e3 !important;
-}
-.swapWrapper {
-  max-width: 450px;
 }
 </style>
