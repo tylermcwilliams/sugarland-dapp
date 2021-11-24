@@ -1,12 +1,6 @@
 <template>
-  <div>
-    <div class="presenceBox">
-      <img class="sigylImg" :src="image" alt="" />
-    </div>
-    <h1>{{ title }}</h1>
-    <p>
-      $ABY Generated: <span class="purple"> {{ detail }}</span>
-    </p>
+  <div class="dataBoxWrapp">
+    <slot></slot>
   </div>
 </template> 
 
@@ -14,7 +8,7 @@
 import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
   name: "PresenceCard",
-  props: ["image", "title", "detail"],
+
   setup() {
     return {};
   },
@@ -64,12 +58,17 @@ p {
   line-height: 23px;
   color: #acacac;
 }
-.presenceBox {
-  height: 120px;
-  width: 120px;
-  background: #251c48;
-  box-shadow: 10px 10px 70px #505050, -10px -10px 70px #151515;
-  border-radius: 60px;
+.dataBoxWrapp {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding-inline: 30px;
+  padding-block: 15px;
+  margin-inline: 10px;
 }
 
 .purple {

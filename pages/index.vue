@@ -1,17 +1,29 @@
 <template>
-  <div class="flex-col justify-center items-center h-screen w-screen">
-    <div class="pt-1 wrapper insetG">
-      <h1>
-        Hey!👋 You just landed in the <span class="purple">Sugar Land</span>
-      </h1>
-      <h1 class="pt-10"></h1>
-      <!--       <h1 class="pt-10">
-        This is a place where wonderful people in the process of making awesome
-        things!
-      </h1> -->
-      <div class="flex-row py-32 space-x-20 pb-10"></div>
+  <section class="flex-row h-screen w-screen">
+    <div class="flex-col justify-center items-center">
+      <h1 class="mt-8 insetG">Here you can swap your token</h1>
+      <div class="collectionsWrapper pb-10 py-4 flex-row">
+        <div class="dataBox flex-row">
+          <DataTab>
+            <h1>Current Price:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h1>Current Price:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h1>Current Price:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h1>Current Price:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 
@@ -83,6 +95,9 @@ p {
   text-align: center;
 }
 
+.dataBox {
+  margin-top: 40px;
+}
 .wrapper {
   max-width: 420px;
 }
