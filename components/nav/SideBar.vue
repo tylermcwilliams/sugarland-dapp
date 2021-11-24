@@ -102,15 +102,15 @@ div {
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3 !important;
@@ -142,15 +142,13 @@ p {
 }
 
 .baseStyle {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
-  font-style: normal;
-  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
   line-height: 23px;
   text-align: center;
   color: #ededed;
@@ -163,15 +161,15 @@ p {
   white-space: nowrap;
 }
 .closeIcon p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3 !important;
@@ -179,15 +177,15 @@ p {
 }
 
 .custNuxtLink {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3;
@@ -195,15 +193,15 @@ p {
 
 @media (min-width: 320px) {
   .copy {
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 23px;
     text-align: center;
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 23px;
     text-align: center;
     color: #8224e3 !important;
@@ -222,15 +220,15 @@ p {
 
 @media (min-width: 620px) {
   .copy {
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 23px;
     text-align: center;
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 23px;
     text-align: center;
     color: #8224e3 !important;
