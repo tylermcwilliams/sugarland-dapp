@@ -1,11 +1,18 @@
 <template>
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
-    <NuxtLink v-if="!collapsed" to="/"
-      ><BananaLogo class="beyBananaLogo" />
+    <NuxtLink v-if="!collapsed" to="/">
       <p class="-mt-4 pb-12">
         $Sugar: <span> ${{ SugarPrice }}</span>
       </p></NuxtLink
     >
+
+    <!--     <NuxtLink v-if="!collapsed" to="/"
+      ><BananaLogo class="beyBananaLogo" />
+      <p class="-mt-4 pb-12">
+        $Sugar: <span> ${{ SugarPrice }}</span>
+      </p></NuxtLink
+    > -->
+
     <div class="displayMobile text-left">
       <div v-if="!collapsed" @click="toggleSidebar">
         <NuxtLink

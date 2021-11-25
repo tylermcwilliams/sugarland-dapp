@@ -8,12 +8,15 @@
       overflow-x-hidden
     "
   >
+    <HeaderBar>
+      <NuxtLink to="/"><BananaLogo class="beyBananaLogo" /> </NuxtLink>
+      <LoginCard class="fixedUP"
+    /></HeaderBar>
+
     <div @click="toggleSidebar" class="burgerMenu">
-      <!--  <img src="https://s2.svgbox.net/hero-solid.svg?ic=menu-alt-2" alt="" /> -->
       <h1 v-if="!collapsed" class="opclText">close menu</h1>
       <h1 v-else class="opclText">open menu</h1>
     </div>
-    <LoginCard class="fixedUP" />
 
     <SideBar class="fixed sm:relative w-80 min-h-screen z-20" />
     <div class="w-full">
@@ -33,9 +36,11 @@ import {
   sidebarWidth,
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
+import HeaderBar from "~/components/nav/HeaderBar.vue";
 export default defineComponent({
   components: {
     BananaLogo,
+    HeaderBar,
   },
   setup() {
     const { showMintingModal } = useModal();
@@ -53,6 +58,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.beyBananaLogo {
+  width: 170px;
+  margin-left: 50px;
+}
 body {
   overflow-x: hidden;
 }

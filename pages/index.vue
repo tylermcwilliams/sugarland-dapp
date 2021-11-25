@@ -1,7 +1,7 @@
 <template>
   <section class="flex-row h-screen w-screen">
     <div class="flex-col justify-center items-center">
-      <h1 class="mt-8 insetG">Sugarland Dashboard</h1>
+      <h1 class="mt-12 insetG">Sugarland Dashboard</h1>
       <div class="collectionsWrapper pb-10 py-4 flex-row">
         <div class="dataBox flex-row">
           <DataTab>
@@ -33,6 +33,7 @@ import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import AbyPopup from "~/components/modals/AbyPopup.vue";
 import { useModal } from "~/composables/useModal";
 import sugPrice from "~/composables/getSugarPrice.ts";
+import LineChart from '~/composables/LineChart.ts'
 /* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";

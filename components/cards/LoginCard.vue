@@ -31,7 +31,8 @@ export default defineComponent({
 <style scoped>
 .flying {
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 50px;
+  top: 16px;
+  font-size: 12px;
 }
 </style>

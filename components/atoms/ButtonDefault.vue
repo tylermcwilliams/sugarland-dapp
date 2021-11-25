@@ -39,7 +39,6 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
 
@@ -47,14 +46,13 @@ button {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 23px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #fff !important;
 }
 </style>
