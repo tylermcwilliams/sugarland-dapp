@@ -21,10 +21,10 @@ export default defineComponent({
 
 <style scoped>
 .shadowWrapper {
-  background: rgba(112, 106, 254, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: rgba(148, 13, 255, 0.45);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding-block: 5px;
   padding-inline: 12px;

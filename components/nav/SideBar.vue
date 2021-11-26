@@ -1,26 +1,35 @@
 <template>
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
-    <NuxtLink v-if="!collapsed" to="/"
-      ><BananaLogo class="beyBananaLogo" />
-      <p class="-mt-8 pb-12">BeY Verse</p></NuxtLink
+    <NuxtLink v-if="!collapsed" to="/">
+      <p class="-mt-4 pb-12">
+        $Sugar: <span> ${{ SugarPrice }}</span>
+      </p></NuxtLink
     >
-    <div class="displayMobile">
+
+    <!--     <NuxtLink v-if="!collapsed" to="/"
+      ><BananaLogo class="beyBananaLogo" />
+      <p class="-mt-4 pb-12">
+        $Sugar: <span> ${{ SugarPrice }}</span>
+      </p></NuxtLink
+    > -->
+
+    <div class="displayMobile text-left">
       <div v-if="!collapsed" @click="toggleSidebar">
         <NuxtLink
           v-for="link in utilLinks"
           :key="link.title"
-          class="p-2 baseStyle self-center place-self-center"
+          class="p-2 baseStyle self-center text-left"
           :to="link.page"
           >{{ link.title }}</NuxtLink
         >
       </div>
     </div>
-    <div class="displayDesktop">
-      <div v-if="!collapsed">
+    <div class="displayDesktop text-left">
+      <div class="text-left" v-if="!collapsed">
         <NuxtLink
           v-for="link in utilLinks"
           :key="link.title"
-          class="p-2 baseStyle self-center place-self-center"
+          class="p-2 baseStyle self-center"
           :to="link.page"
           >{{ link.title }}</NuxtLink
         >
@@ -33,16 +42,18 @@
         v-if="!collapsed"
         class="copy"
         target="_blank"
-        href="https://beystudio.it/"
-        >Dreamed by <strong>BeY Studio</strong></a
+        href="https://www.sugarlandcoin.com/"
+        ><!-- <strong>Sugarland</strong> --></a
       >
     </div>
   </div>
 </template>
 
 <script>
+import sugPrice from "~/composables/getSugarPrice.ts";
 import { defineComponent, onMounted } from "@nuxtjs/composition-api";
 import BananaLogo from "~/components/atoms/bananaLogo.vue";
+
 import {
   collapsed,
   closed,
@@ -50,30 +61,43 @@ import {
   sidebarWidth,
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
+
 export default defineComponent({
   name: "SideBar",
   components: {
     BananaLogo,
   },
   setup() {
+    const { SugarPrice, getSugarPrice } = sugPrice();
+
     const utilLinks = [
       {
         page: "/",
-        title: "About",
+        title: "Dashboard",
+      },
+      {
+        page: "/swap",
+        title: "Sugar Swap",
       },
       {
         page: "/collections",
-        title: "Collections",
+        title: "NFT Collections",
       },
       {
         page: "/profile",
-        title: "Profile",
+        title: "Governance",
       },
     ];
+
     onMounted(() => {
       if (window.innerWidth < 520) {
         toggleSidebar();
       }
+      getSugarPrice();
+      console.log("Prova Prezzo", getSugarPrice());
+      window.setInterval(() => {
+        getSugarPrice();
+      }, 20000);
     });
 
     return {
@@ -83,6 +107,8 @@ export default defineComponent({
       toggleSidebar,
       sidebarWidth,
       sidebarClose,
+      SugarPrice,
+      getSugarPrice,
     };
   },
 });
@@ -93,6 +119,10 @@ export default defineComponent({
 
 
 <style scoped>
+span {
+  color: #fff;
+  margin-left: 5px;
+}
 a.nuxt-link-exact-active {
   color: #8224e3;
 }
@@ -102,17 +132,16 @@ div {
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #8224e3 !important;
 }
 .copyWrapper {
@@ -130,7 +159,7 @@ p {
   border-right-width: 1px;
   border-color: #8424e326;
   margin-right: 20px;
-  background-color: #f1f1f1;
+  background-color: #251c48;
   padding-block-start: 120px;
   transition: all ease 0.3s;
 }
@@ -142,18 +171,15 @@ p {
 }
 
 .baseStyle {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 23px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2.5;
   text-align: center;
-  color: #3a3335;
+  color: #ededed;
 }
 
 .closeIcon {
@@ -163,15 +189,15 @@ p {
   white-space: nowrap;
 }
 .closeIcon p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3 !important;
@@ -179,15 +205,15 @@ p {
 }
 
 .custNuxtLink {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3;
@@ -195,15 +221,15 @@ p {
 
 @media (min-width: 320px) {
   .copy {
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 23px;
     text-align: center;
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 23px;
     text-align: center;
     color: #8224e3 !important;
@@ -222,15 +248,15 @@ p {
 
 @media (min-width: 620px) {
   .copy {
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 23px;
     text-align: center;
-    font-family: "Inconsolata", monospace;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 23px;
     text-align: center;
     color: #8224e3 !important;

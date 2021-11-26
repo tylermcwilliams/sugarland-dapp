@@ -8,14 +8,14 @@
           :key="Preview.id"
         >
           <img class="imgCollection" :src="Preview.image" alt="" />
-          <div class="text-left py-4 pb-8">
-            <ul class="text-left">
+          <div class="text-center py-4 pb-8">
+            <ul class="text-center">
               <li>
                 Name:
                 <span class="text-white">{{ Preview.collectionName }}</span>
               </li>
               <li>
-                Artist/s:
+                Util:
                 <span class="text-white">{{ Preview.artistName }} </span>
               </li>
               <li>
@@ -52,17 +52,18 @@ export default defineComponent({
     let Previews = ref([
       {
         id: "1",
-        image: "https://beystudio.it/wp-content/uploads/2020/12/ARTWORK.svg",
-        collectionName: "Cool Bananas",
-        artistName: "Fausto della Villa",
-        collectionType: "Random Generated",
+        image: "https://dinopixel.com/preload/0520/pixel-key.png",
+        collectionName: "NFT Governance Key",
+        artistName: "Access to Sugar Governance",
+        collectionType: "Ultra Rare",
       },
       {
         id: "2",
-        image: "https://beystudio.it/wp-content/uploads/2020/12/ADV.svg",
-        collectionName: "Hot Bananas",
-        artistName: "Adriano D'Elia",
-        collectionType: "Random Generated",
+        image:
+          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Box.png",
+        collectionName: "NFT Box",
+        artistName: "Random NFT from Sugarland",
+        collectionType: "Rare",
       },
     ]);
     return { Previews, showMintingModal };
@@ -73,8 +74,8 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #f1f1f1;
-  color: #3a3335;
+  background-color: #251c48;
+  color: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,41 +87,36 @@ div {
   flex-direction: column;
 }
 h1 {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   text-align: center;
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #8224e3;
 }
 li {
   padding-block: 5px;
 }
 ul {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-weight: 200;
-  text-align: center;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.688);
 }
 

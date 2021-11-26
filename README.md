@@ -1,4 +1,8 @@
-# abyss-app
+<<<<<<< HEAD
+# Sugarland Dapp
+=======
+# Sugarland-dapp
+>>>>>>> 001f02fde5af1082d7ca2d7f13996b263707a7e7
 
 ## Build Setup
 

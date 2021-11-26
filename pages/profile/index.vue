@@ -3,7 +3,7 @@
     <div class="flex-col justify-center items-center">
       <h1 class="mt-8 insetG">Here you can find your collected NFTs</h1>
       <div class="collectionsWrapper pb-10 py-4">
-        <PresenceFullCard
+        <!--  <PresenceFullCard
           class="collectionCard"
           v-for="Preview in Previews"
           :key="Preview.id"
@@ -30,7 +30,7 @@
               placeholder="Discover Collection"
               @clicked="showMintingModal"
           /></PopFromShadow>
-        </PresenceFullCard>
+        </PresenceFullCard> -->
       </div>
       <div class="flex-col align-middle"></div>
     </div>
@@ -74,8 +74,8 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #f1f1f1;
-  color: #3a3335;
+  background-color: #251c48;
+  color: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,25 +87,25 @@ div {
   flex-direction: column;
 }
 h1 {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   text-align: center;
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3;
@@ -114,13 +114,13 @@ li {
   padding-block: 5px;
 }
 ul {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   text-align: center;
   color: rgba(255, 255, 255, 0.688);
 }
@@ -159,7 +159,7 @@ ul {
   }
   .insetG {
     margin-left: 280px;
-    margin-top: 50px;
+    margin-top: 90px;
   }
 }
 </style>

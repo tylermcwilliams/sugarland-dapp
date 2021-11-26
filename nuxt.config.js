@@ -2,7 +2,7 @@ export default {
   ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "BeY Verse",
+    title: "Sugarland Dapp",
     htmlAttrs: {
       lang: "en",
     },
@@ -41,7 +41,11 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/svg"],
+  modules: ["@nuxtjs/svg", "@nuxtjs/axios"],
+
+  axios: {
+    // proxy: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

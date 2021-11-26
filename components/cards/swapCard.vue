@@ -1,20 +1,14 @@
 <template>
-  <div>
-    <div class="presenceBox">
-      <img class="sigylImg" :src="image" alt="" />
-    </div>
-    <h1>{{ title }}</h1>
-    <p>
-      $ABY Generated: <span class="purple"> {{ detail }}</span>
-    </p>
+  <div class="dataBoxWrapp">
+    <slot></slot>
   </div>
 </template> 
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
-  name: "PresenceCard",
-  props: ["image", "title", "detail"],
+  name: "SwapCard",
+
   setup() {
     return {};
   },
@@ -38,40 +32,43 @@ div {
   align-items: center;
 }
 h1 {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
-.presenceBox {
-  height: 120px;
-  width: 120px;
-  background: #f1f1f1;
-  box-shadow: 10px 10px 70px #505050, -10px -10px 70px #151515;
-  border-radius: 60px;
+.dataBoxWrapp {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding-inline: 30px;
+  padding-block: 15px;
+  margin-inline: 15px;
 }
 
 .purple {

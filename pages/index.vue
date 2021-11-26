@@ -1,21 +1,29 @@
 <template>
-  <div class="flex-col justify-center items-center h-screen w-screen">
-    <div class="pt-1 wrapper insetG">
-      <h1>
-        Hey!👋 You just landed in the <span class="purple">BeY Verse,</span> BeY
-        Studio digital creative hub for blockchain projects.
-      </h1>
-      <h1 class="pt-10">
-        We love tech and art but most of all we love involving awesome people in
-        making awesome things.
-      </h1>
-      <!--       <h1 class="pt-10">
-        This is a place where wonderful people in the process of making awesome
-        things!
-      </h1> -->
-      <div class="flex-row py-32 space-x-20 pb-10"></div>
+  <section class="flex-row h-screen w-screen">
+    <div class="flex-col justify-center items-center">
+      <h1 class="mt-12 insetG">Sugarland Dashboard</h1>
+      <div class="collectionsWrapper pb-10 py-4 flex-row">
+        <div class="dataBox flex-row">
+          <DataTab>
+            <h1>Current Price:</h1>
+            <span>{{ SugarPrice }}</span>
+          </DataTab>
+          <DataTab>
+            <h1>Holders:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h1>Circulating:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h1>Market Cap:</h1>
+            <span>0.00017230725</span>
+          </DataTab>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 
@@ -24,6 +32,8 @@ import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import AbyPopup from "~/components/modals/AbyPopup.vue";
 import { useModal } from "~/composables/useModal";
+import sugPrice from "~/composables/getSugarPrice.ts";
+import LineChart from '~/composables/LineChart.ts'
 /* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
@@ -32,12 +42,21 @@ export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
 
   setup(mixins) {
+    const { SugarPrice, getSugarPrice } = sugPrice();
+
     const { showMintingModal } = useModal(AbyPopup);
 
     let Details = ref([mixins]);
     /* console.log(Details.value); */
 
-    return { Details, showMintingModal, NuxtSSRScreenSize, mixins };
+    return {
+      Details,
+      showMintingModal,
+      NuxtSSRScreenSize,
+      mixins,
+      SugarPrice,
+      getSugarPrice,
+    };
   },
   components: { PopFromShadow },
 });
@@ -45,8 +64,8 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #f1f1f1;
-  color: #3a3335;
+  background-color: #251c48;
+  color: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,41 +77,49 @@ div {
   flex-direction: column;
 }
 h1 {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #3a3335;
+  color: #ededed;
   line-height: 1.8;
 }
 
 p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
 }
 
+span {
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.dataBox {
+  margin-top: 40px;
+}
 .wrapper {
   max-width: 420px;
 }
 
 .purple {
-  color: #8224e3;
+  color: #9034e5;
 }
 
 @media (min-width: 320px) {

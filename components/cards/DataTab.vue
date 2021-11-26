@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <!-- <slot></slot> -->
-    <h1>{{ title }}</h1>
-    <p>{{ detail }}</p>
+  <div class="swapWrapper">
+    <PopFromShadow class="w-52 self-center">
+      <slot></slot>
+    </PopFromShadow>
   </div>
-</template>
+</template> 
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
-  name: "InfoCard",
-  props: ["title", "detail"],
+  name: "DataTab",
+
   setup() {
     return {};
   },
@@ -22,9 +22,16 @@ export default defineComponent({
 
 
 <style scoped>
+img {
+  max-width: 80px;
+  padding-block: 20px;
+}
+
 div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   font-family: "Montserrat", sans-serif;
@@ -37,7 +44,6 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: #acacac;
 }
 
@@ -45,14 +51,35 @@ p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 23px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
-  color: #b93cb3 !important;
+  color: #acacac;
+}
+.dataBoxWrapp {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding-inline: 30px;
+  padding-block: 15px;
+}
+
+.swapWrapper {
+  margin-inline: 10px !important;
+}
+
+.purple {
+  color: #8224e3 !important;
+}
+.swapWrapper {
+  max-width: 450px;
 }
 </style>

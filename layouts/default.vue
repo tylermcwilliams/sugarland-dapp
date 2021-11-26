@@ -8,12 +8,15 @@
       overflow-x-hidden
     "
   >
+    <HeaderBar>
+      <NuxtLink to="/"><BananaLogo class="beyBananaLogo" /> </NuxtLink>
+      <LoginCard class="fixedUP"
+    /></HeaderBar>
+
     <div @click="toggleSidebar" class="burgerMenu">
-      <!--  <img src="https://s2.svgbox.net/hero-solid.svg?ic=menu-alt-2" alt="" /> -->
       <h1 v-if="!collapsed" class="opclText">close menu</h1>
       <h1 v-else class="opclText">open menu</h1>
     </div>
-    <LoginCard class="fixedUP" />
 
     <SideBar class="fixed sm:relative w-80 min-h-screen z-20" />
     <div class="w-full">
@@ -33,9 +36,11 @@ import {
   sidebarWidth,
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
+import HeaderBar from "~/components/nav/HeaderBar.vue";
 export default defineComponent({
   components: {
     BananaLogo,
+    HeaderBar,
   },
   setup() {
     const { showMintingModal } = useModal();
@@ -53,6 +58,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.beyBananaLogo {
+  width: 170px;
+  margin-left: 50px;
+}
 body {
   overflow-x: hidden;
 }
@@ -80,15 +89,15 @@ body {
   }
 }
 .opclText {
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 23px;
   text-align: center;
   color: #8224e3 !important;
