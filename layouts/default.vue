@@ -27,7 +27,7 @@
 </template>
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { useConnect } from '~/composables/web3/useConnect'
+import { useConnect } from "~/composables/web3/useConnect";
 import BananaLogo from "~/components/atoms/bananaLogo.vue";
 import { useModal } from "~/composables/useModal";
 import {
@@ -106,5 +106,39 @@ body {
   cursor: pointer;
   white-space: nowrap;
   text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8224e3;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8224e3;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #7021c0;
+}
+::-webkit-scrollbar-track {
+  background: #251c48;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #251c48;
+}
+::-webkit-scrollbar-track:active {
+  background: #251c48;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 </style>
