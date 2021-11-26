@@ -6,7 +6,12 @@
         placeholder="Connect Your Wallet"
         @clicked="showMintingModal"
       />
-      <span v-if="active"> {{ account }}... </span>
+      <ButtonDefault
+        v-else
+        :placeholder="formatAddress(account) + '[Disconnect]'"
+        @clicked="deactivate"
+      />
+      <!-- <span v-if="active"> {{ account }}... </span> -->
     </PopFromShadow>
   </div>
 </template>
@@ -16,16 +21,19 @@ import { defineComponent } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
 import { useModal } from "~/composables/useModal";
 import LoginPopup from "~/components/modals/LoginPopup.vue";
+import formatAddress from "~/composables/formatAddress";
 export default defineComponent({
   name: "LoginCard",
   setup() {
-    const { active, account } = useWeb3();
+    const { active, deactivate, account } = useWeb3();
     const { showMintingModal } = useModal(LoginPopup);
 
     return {
       showMintingModal,
       active,
       account,
+      deactivate,
+      formatAddress,
     };
   },
 });
