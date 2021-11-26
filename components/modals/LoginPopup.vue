@@ -14,6 +14,7 @@
           :key="key"
           :disabled="connecting"
           @click="connect(wallet.connector)"
+          class="myButt"
         >
           <component :is="wallet.iconURL" class="w-7 h-7 text-white" />
           {{ wallet.name }}
@@ -41,16 +42,16 @@ export default defineComponent({
 
     const connecting = ref(false);
     const connect = async (connector) => {
-      connecting.value = true
+      connecting.value = true;
       try {
-        await activate(connector, undefined, true)
-        connecting.value = false
-        close()
+        await activate(connector, undefined, true);
+        connecting.value = false;
+        close();
       } catch (error) {
-        console.error(error.message)
+        console.error(error.message);
       }
-      connecting.value = false
-    }
+      connecting.value = false;
+    };
 
     return {
       isShown,
@@ -67,6 +68,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.myButt {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 600;
+}
+
 h1 {
   color: #180527;
 }

@@ -8,7 +8,7 @@
       />
       <ButtonDefault
         v-else
-        :placeholder="formatAddress(account) + '[Disconnect]'"
+        :placeholder="formatAddress(account) + ' [Disconnect]'"
         @clicked="deactivate"
       />
       <!-- <span v-if="active"> {{ account }}... </span> -->
