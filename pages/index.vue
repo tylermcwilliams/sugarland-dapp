@@ -22,6 +22,10 @@
           </DataTab>
         </div>
       </div>
+      <div class="flex-row spacingTot">
+        <ReflectionCard></ReflectionCard>
+        <ChartCard></ChartCard>
+      </div>
     </div>
   </section>
 </template>
@@ -33,10 +37,11 @@ import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import AbyPopup from "~/components/modals/AbyPopup.vue";
 import { useModal } from "~/composables/useModal";
 import sugPrice from "~/composables/getSugarPrice.ts";
-import LineChart from '~/composables/LineChart.ts'
+import LineChart from "~/composables/LineChart.ts";
 /* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
+import ChartCard from "~/components/cards/chartCard.vue";
 
 export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
@@ -47,7 +52,6 @@ export default defineComponent({
     const { showMintingModal } = useModal(AbyPopup);
 
     let Details = ref([mixins]);
-    /* console.log(Details.value); */
 
     return {
       Details,
@@ -58,7 +62,7 @@ export default defineComponent({
       getSugarPrice,
     };
   },
-  components: { PopFromShadow },
+  components: { PopFromShadow, ChartCard },
 });
 </script>
 
@@ -79,12 +83,8 @@ div {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 23px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
   font-weight: 400;
   line-height: 23px;
   text-align: center;
@@ -95,12 +95,9 @@ h1 {
 p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
   font-weight: 400;
   line-height: 23px;
   text-align: center;
@@ -135,6 +132,10 @@ span {
   }
   .insetG {
     margin-left: 150px;
+  }
+  .spacingTot > * {
+    margin-block: 40px;
+    margin-inline: 50px;
   }
 }
 </style>

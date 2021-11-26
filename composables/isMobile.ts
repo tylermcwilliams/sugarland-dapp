@@ -4,7 +4,6 @@ import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
 export default defineComponent({
   setup() {
     let mixins = NuxtSSRScreenSize;
-    console.log(mixins);
     /*     function isMobile() {
       if (process.server) {
         if (mixins) {

@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        display: ["EB Garamond", "serif"],
+        display: ["Montserrat", "sans-serif"],
         body: ["Montserrat", "sans-serif"],
       },
       colors: {

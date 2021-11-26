@@ -94,7 +94,6 @@ export default defineComponent({
         toggleSidebar();
       }
       getSugarPrice();
-      console.log("Prova Prezzo", getSugarPrice());
       window.setInterval(() => {
         getSugarPrice();
       }, 20000);

@@ -1,20 +1,44 @@
 <template>
-  <PopFromShadow
-    ><div class="backgroundCard">
-      <slot></slot>
-    </div>
-  </PopFromShadow>
+  <div class="reflectCard">
+    <PopFromShadow
+      ><div class="dataRefBox">
+        <h1 class="singleData">Your $Sugar Details:</h1>
+        <div class="singleData">
+          <h2>Current Tokens:</h2>
+          <span class="numbersData">{{ elementsCard.CurrentBalance }}</span>
+        </div>
+        <div class="singleData">
+          <h2>Total Purchased till date:</h2>
+          <span class="numbersData">{{ elementsCard.TotalPurchased }}</span>
+        </div>
+        <div class="singleData">
+          <h2>Total Sold till date:</h2>
+          <span class="numbersData">{{ elementsCard.TotalSold }}</span>
+        </div>
+        <div class="singleData">
+          <h2>Total Reflections Earned:</h2>
+          <span class="numbersData">{{ elementsCard.TotalReflections }}</span>
+        </div>
+      </div>
+    </PopFromShadow>
+  </div>
 </template> 
 
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "../atoms/popFromShadow.vue";
 export default defineComponent({
-  name: "PresenceFullCard",
+  name: "reflectionCard",
 
   setup(props) {
-    const Previews = ref([]);
-    return { Previews };
+    const elementsCard = ref({
+      CurrentBalance: 10000,
+      TotalPurchased: 10000,
+      TotalSold: 10000,
+      TotalReflections: 10000,
+    });
+
+    return { elementsCard };
   },
   components: { PopFromShadow },
 });
@@ -25,14 +49,39 @@ export default defineComponent({
 
 
 <style scoped>
-.backgroundCard {
+.dataRefBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-inline: 50px;
+  padding-block: 30px;
+}
+
+.singleData {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: left;
+  margin-block: 5px;
+  padding-block: 10px;
+  padding-inline: 20px;
+}
+
+.numbersData {
+  padding-inline: 10px;
+}
+
+.reflectCard {
   max-height: 490px;
-  max-width: 340px;
+  max-width: 700px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-block: 80px;
-  padding-inline: 60px;
+  align-items: left;
+  padding-block: 20px;
+  padding-inline: 20px;
+  margin-left: 320px;
 }
 img {
   max-width: 80px;
@@ -40,32 +89,33 @@ img {
 }
 
 h1 {
-  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  font-style: normal;
+  line-height: 23px;
+  color: #fff;
+}
+h2 {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 23px;
-  text-align: center;
-  font-family: "Inconsolata", monospace;
+  text-align: left;
   font-style: normal;
-  font-weight: 200;
   line-height: 23px;
-  text-align: center;
   color: #fff;
+  white-space: nowrap;
 }
 
-p {
-  font-family: "Inconsolata", monospace;
-  font-style: normal;
-  font-weight: normal;
+span {
   font-size: 14px;
   line-height: 23px;
   text-align: center;
-  font-family: "Inconsolata", monospace;
   font-style: normal;
   font-weight: 200;
   line-height: 23px;
   text-align: center;
-  color: #8224e3 !important;
+  color: #fff !important;
 }
 </style>

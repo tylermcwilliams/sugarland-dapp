@@ -73,7 +73,7 @@ p {
 }
 
 .swapWrapper {
-  margin-inline: 10px !important;
+  margin-inline: 20px !important;
 }
 
 .purple {
