@@ -37,7 +37,6 @@ import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import AbyPopup from "~/components/modals/AbyPopup.vue";
 import { useModal } from "~/composables/useModal";
 import sugPrice from "~/composables/getSugarPrice.ts";
-import LineChart from "~/composables/LineChart.ts";
 /* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
