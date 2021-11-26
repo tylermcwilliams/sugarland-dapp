@@ -27,6 +27,7 @@
 </template>
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
+import { useConnect } from '~/composables/web3/useConnect'
 import BananaLogo from "~/components/atoms/bananaLogo.vue";
 import { useModal } from "~/composables/useModal";
 import {
@@ -44,6 +45,7 @@ export default defineComponent({
   },
   setup() {
     const { showMintingModal } = useModal();
+    useConnect();
 
     return {
       showMintingModal,

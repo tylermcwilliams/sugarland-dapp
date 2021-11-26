@@ -9,15 +9,24 @@
       <h1 class="modalTitle">Connect your wallet</h1>
 
       <PopFromShadow class="w-52 self-center">
-        <ButtonDefault placeholder="Connect"
-          ><img src="~/assets/img/metamask-fox.svg" alt="" /></ButtonDefault
-      ></PopFromShadow>
+        <button
+          v-for="(wallet, key) in wallets"
+          :key="key"
+          :disabled="connecting"
+          @click="connect(wallet.connector)"
+        >
+          <component :is="wallet.iconURL" class="w-7 h-7 text-white" />
+          {{ wallet.name }}
+        </button>
+      </PopFromShadow>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from "@nuxtjs/composition-api";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
+import { useWeb3 } from "@instadapp/vue-web3";
+import { useWallets } from "~/composables/web3/useWallets";
 import { useModal } from "~/composables/useModal";
 import InputRange from "../atoms/inputRange.vue";
 export default defineComponent({
@@ -26,8 +35,32 @@ export default defineComponent({
     show: { type: Boolean, default: false },
   },
   setup() {
+    const { activate } = useWeb3();
+    const { wallets } = useWallets();
     const { isShown, props, modal, close } = useModal();
-    return { isShown, props, modal, close };
+
+    const connecting = ref(false);
+    const connect = async (connector) => {
+      connecting.value = true
+      try {
+        await activate(connector, undefined, true)
+        connecting.value = false
+        close()
+      } catch (error) {
+        console.error(error.message)
+      }
+      connecting.value = false
+    }
+
+    return {
+      isShown,
+      props,
+      modal,
+      wallets,
+      connecting,
+      connect,
+      close,
+    };
   },
   components: { InputRange },
 });

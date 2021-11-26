@@ -9,9 +9,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@instadapp/vue-web3": "^0.5.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/composition-api": "^0.30.0",
     "@nuxtjs/svg": "^0.3.0",
+    "@web3-react/abstract-connector": "^6.0.7",
+    "@web3-react/injected-connector": "^6.0.7",
     "axios": "^0.24.0",
     "chart.js": "2",
     "core-js": "^3.15.1",
