@@ -1,4 +1,4 @@
-# abyss-app
+# Sugarland Dapp
 
 ## Build Setup
 
