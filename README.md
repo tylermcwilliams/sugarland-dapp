@@ -1,4 +1,4 @@
-# Sugarland Dapp
+# 🍭 Sugarland Dapp
 
 ## Build Setup
 
