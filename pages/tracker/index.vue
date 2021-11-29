@@ -3,7 +3,9 @@
     <div class="flex-col justify-center items-center">
       <h1 class="mt-8 insetG">Here you can see your token reflections</h1>
       <div class="collectionsWrapper pb-10 py-4"></div>
-      <div class="flex-col align-middle"></div>
+      <div class="flex-col align-middle">
+        <ReflectionCard></ReflectionCard>
+      </div>
     </div>
   </section>
 </template>
@@ -13,8 +15,10 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 
+
 export default defineComponent({
   setup() {
+
     return {};
   },
 });

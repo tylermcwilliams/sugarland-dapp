@@ -21,9 +21,10 @@ export default {
   computed: {
     myStyles() {
       return {
-        width: `600px`,
+        width: `800px`,
         height: `350px`,
         position: "relative",
+        color: `white`,
       };
     },
   },

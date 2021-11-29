@@ -2,7 +2,7 @@
   <div class="socialIConsWrap flex-row justify-center">
     <ul class="socialICons">
       <li>
-        <a href=""
+        <a href="https://twitter.com/sugarlandcoin"
           ><img
             src="https://s2.svgbox.net/social.svg?ic=twitter&color=f2f2f2"
             width="15"
@@ -10,7 +10,7 @@
         /></a>
       </li>
       <li>
-        <a href=""
+        <a href="https://t.me/SugarLandChat"
           ><img
             src="https://s2.svgbox.net/social.svg?ic=telegram&color=f2f2f2"
             width="15"
@@ -18,7 +18,7 @@
         /></a>
       </li>
       <li>
-        <a href=""
+        <a href="https://discord.gg/V3ZHGHMqpp"
           ><img
             src="https://s2.svgbox.net/social.svg?ic=discord&color=f2f2f2"
             width="15"
@@ -34,7 +34,7 @@
         /></a>
       </li>
       <li>
-        <a href=""
+        <a href="https://www.instagram.com/sugarland_IG"
           ><img
             src="https://s2.svgbox.net/social.svg?ic=instagram&color=f2f2f2"
             width="15"

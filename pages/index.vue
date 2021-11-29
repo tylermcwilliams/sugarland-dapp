@@ -23,7 +23,6 @@
         </div>
       </div>
       <div class="flex-row spacingTot">
-        <ReflectionCard></ReflectionCard>
         <ChartCard></ChartCard>
       </div>
     </div>
@@ -34,7 +33,7 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
-import AbyPopup from "~/components/modals/AbyPopup.vue";
+import sugarPopup from "~/components/modals/sugarPopup.vue";
 import { useModal } from "~/composables/useModal";
 import sugPrice from "~/composables/getSugarPrice.ts";
 /* import { useModal } from "~/composables/useModal"; */
@@ -48,7 +47,7 @@ export default defineComponent({
   setup(mixins) {
     const { SugarPrice, getSugarPrice } = sugPrice();
 
-    const { showMintingModal } = useModal(AbyPopup);
+    const { showMintingModal } = useModal(sugarPopup);
 
     let Details = ref([mixins]);
 
@@ -132,9 +131,9 @@ span {
   .insetG {
     margin-left: 150px;
   }
-  .spacingTot > * {
+  .spacingTot {
     margin-block: 40px;
-    margin-inline: 50px;
+    margin-inline-start: 250px;
   }
 }
 </style>

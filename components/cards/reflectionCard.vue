@@ -3,6 +3,18 @@
     <PopFromShadow
       ><div class="dataRefBox">
         <h1 class="singleData">Your $Sugar Details:</h1>
+
+        <div v-if="!active" class="singleData buttonPresent">
+          <input
+            class="inputText"
+            type="text"
+            placeholder="Your wallet Address"
+          />
+          <PopFromShadow>
+            <button class="checkButton">Check</button>
+          </PopFromShadow>
+        </div>
+
         <div class="singleData">
           <h2>Current Tokens:</h2>
           <span class="numbersData">{{ elementsCard.CurrentBalance }}</span>
@@ -26,11 +38,13 @@
 
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
+import { useWeb3 } from "@instadapp/vue-web3";
 import PopFromShadow from "../atoms/popFromShadow.vue";
 export default defineComponent({
   name: "reflectionCard",
 
   setup(props) {
+    const { active } = useWeb3();
     const elementsCard = ref({
       CurrentBalance: 10000,
       TotalPurchased: 10000,
@@ -38,7 +52,7 @@ export default defineComponent({
       TotalReflections: 10000,
     });
 
-    return { elementsCard };
+    return { elementsCard, active };
   },
   components: { PopFromShadow },
 });
@@ -49,6 +63,25 @@ export default defineComponent({
 
 
 <style scoped>
+.buttonPresent {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+  font-size: 12px;
+}
+.inputText {
+  outline: none;
+  padding-block: 7px;
+  padding-inline: 20px;
+  border-radius: 10px;
+  color: #9034e5;
+  margin-right: 10px;
+  margin-left: -5px;
+}
+
+.inputText:active {
+  outline: none;
+}
 .dataRefBox {
   display: flex;
   flex-direction: column;

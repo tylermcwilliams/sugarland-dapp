@@ -34,7 +34,7 @@ import ButtonDefault from "../atoms/ButtonDefault.vue";
 import InputRange from "../atoms/inputRange.vue";
 import MintingBox from "../reusable/MintingBox.vue";
 export default defineComponent({
-  name: "AbyPopup",
+  name: "sugarPopup",
   props: {
     show: { type: Boolean, default: false },
   },

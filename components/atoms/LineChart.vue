@@ -33,14 +33,20 @@ export default {
             label: "$Sugar Price",
             data: [2, 10, 5, 9, 0, 6, 20],
             backgroundColor: this.gradient,
-            borderColor: "rgba(130, 36, 227, 0.4)",
-            pointBackgroundColor: "rgba(130, 36, 227, 1)",
+            borderColor: "rgba(255, 255, 255, 0.4)",
+            pointBackgroundColor: "rgba(255, 255, 255, 1)",
           },
         ],
       },
       {
         responsive: true,
         maintainAspectRatio: false,
+        lables: {
+          font: {
+            color: "rgba(255, 255, 255, 1)",
+          },
+        },
+
         scales: {
           x: {
             grid: {
