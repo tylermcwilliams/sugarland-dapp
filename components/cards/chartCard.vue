@@ -1,14 +1,18 @@
 <template>
-  <LineChart :style="myStyles" />
+  <PopFromShadow>
+    <LineChart :style="myStyles" />
+  </PopFromShadow>
 </template>
 
 <script>
 import LineChart from "~/components/atoms/LineChart.vue";
+import PopFromShadow from "../atoms/popFromShadow.vue";
 
 export default {
   name: "TestChart",
   components: {
     LineChart,
+    PopFromShadow,
   },
   data() {
     return {};
@@ -37,8 +41,9 @@ export default {
   color: #8224e3;
   margin-top: 60px;
 }
-
-/* canvas#line-chart {
-  width: 500px !important;
-} */
+canvas#line-chart {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 25px;
+}
 </style>

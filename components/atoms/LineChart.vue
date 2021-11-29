@@ -4,11 +4,6 @@ import { Line } from "vue-chartjs";
 export default {
   extends: Line,
   data() {
-    const DISPLAY = false;
-    const BORDER = true;
-    const CHART_AREA = true;
-    const TICKS = true;
-
     return {
       gradient: null,
     };
@@ -49,7 +44,10 @@ export default {
         scales: {
           x: {
             grid: {
+              color: "transparent",
+              borderWidth: 10,
               display: false,
+              tickWidth: 0,
             },
           },
           y: {
@@ -59,7 +57,7 @@ export default {
           },
         },
         title: {
-          display: true,
+          display: false,
           text: "Sugarland Chart",
         },
       }

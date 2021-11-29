@@ -1,0 +1,82 @@
+<template>
+  <div class="socialIConsWrap flex-row justify-center">
+    <ul class="socialICons">
+      <li>
+        <a href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=twitter&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=telegram&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=discord&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=facebook&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=instagram&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import { defineComponent } from "@nuxtjs/composition-api";
+export default defineComponent({
+  name: "logoSugar",
+  setup() {
+    return {};
+  },
+});
+</script>
+
+
+
+
+
+<style scoped>
+.socialIConsWrap {
+  position: absolute;
+  bottom: 10px;
+}
+
+li {
+  margin-inline: 15px;
+}
+.socialICons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoSugar {
+  margin-block: 12px;
+  margin-block-end: 33px;
+}
+</style>

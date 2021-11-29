@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <img
-      class="logoBanana"
+      class="logoSugar"
       src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Ext.png"
       alt=""
     />
@@ -11,7 +11,7 @@
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
-  name: "logoBanana",
+  name: "logoSugar",
   setup() {
     return {};
   },
@@ -23,7 +23,7 @@ export default defineComponent({
 
 
 <style scoped>
-.logoBanana {
+.logoSugar {
   margin-block: 12px;
   margin-block-end: 33px;
   cursor: pointer;

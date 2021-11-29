@@ -7,7 +7,7 @@
     >
 
     <!--     <NuxtLink v-if="!collapsed" to="/"
-      ><BananaLogo class="sugarLogo" />
+      ><sugarLogo class="sugarLogo" />
       <p class="-mt-4 pb-12">
         $Sugar: <span> ${{ SugarPrice }}</span>
       </p></NuxtLink
@@ -34,6 +34,30 @@
           >{{ link.title }}</NuxtLink
         >
       </div>
+      <div class="separatorLine"></div>
+    </div>
+    <div class="displayDesktop text-left">
+      <div class="text-left" v-if="!collapsed">
+        <NuxtLink
+          v-for="link in otherLinks"
+          :key="link.title"
+          class="p-2 baseStyle self-center"
+          :to="link.page"
+          >{{ link.title }}</NuxtLink
+        >
+      </div>
+      <div class="separatorLine"></div>
+    </div>
+    <div class="displayDesktop text-left">
+      <div class="text-left" v-if="!collapsed">
+        <NuxtLink
+          v-for="link in lastLinks"
+          :key="link.title"
+          class="p-2 baseStyle self-center"
+          :to="link.page"
+          >{{ link.title }}</NuxtLink
+        >
+      </div>
     </div>
 
     <div class="flex-row copyWrapper">
@@ -46,13 +70,17 @@
         ><!-- <strong>Sugarland</strong> --></a
       >
     </div>
+
+    <div class="flex-row copyWrapper">
+      <SocialCard />
+    </div>
   </div>
 </template>
 
 <script>
 import sugPrice from "~/composables/getSugarPrice.ts";
 import { defineComponent, onMounted } from "@nuxtjs/composition-api";
-import BananaLogo from "~/components/atoms/bananaLogo.vue";
+import sugarLogo from "~/components/atoms/sugarLogo.vue";
 
 import {
   collapsed,
@@ -61,11 +89,13 @@ import {
   sidebarWidth,
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
+import SocialCard from "../atoms/socialCard.vue";
 
 export default defineComponent({
   name: "SideBar",
   components: {
-    BananaLogo,
+    sugarLogo,
+    SocialCard,
   },
   setup() {
     const { SugarPrice, getSugarPrice } = sugPrice();
@@ -73,19 +103,35 @@ export default defineComponent({
     const utilLinks = [
       {
         page: "/",
-        title: "Dashboard",
+        title: "Stats",
       },
       {
         page: "/swap",
-        title: "Sugar Swap",
+        title: "Swap",
       },
       {
+        page: "/tracker",
+        title: "Reflections",
+      },
+    ];
+    const otherLinks = [
+      {
         page: "/collections",
-        title: "NFT Collections",
+        title: "Mint NFT [SOON]",
       },
       {
         page: "/profile",
-        title: "Governance",
+        title: "Stake NFT [SOON]",
+      },
+    ];
+    const lastLinks = [
+      {
+        page: "/governance",
+        title: "Governance [SOON]",
+      },
+      {
+        page: "/merch",
+        title: "Merch [SOON]",
       },
     ];
 
@@ -101,6 +147,8 @@ export default defineComponent({
 
     return {
       utilLinks,
+      otherLinks,
+      lastLinks,
       collapsed,
       closed,
       toggleSidebar,
@@ -145,6 +193,7 @@ p {
 }
 .copyWrapper {
   width: 100%;
+  align-items: center;
 }
 
 .sideBarWrap {
@@ -216,6 +265,12 @@ p {
   line-height: 23px;
   text-align: center;
   color: #8224e3;
+}
+.separatorLine {
+  width: 150px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-block: 20px;
 }
 
 @media (min-width: 320px) {

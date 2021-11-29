@@ -1,7 +1,7 @@
 <template>
   <section class="flex-row h-screen w-screen">
     <div class="flex-col justify-center items-center">
-      <h1 class="mt-8 insetG">Here you can stake your collected NFTs</h1>
+      <h1 class="mt-8 insetG">Here you can find your collected NFTs</h1>
       <div class="collectionsWrapper pb-10 py-4">
         <!--  <PresenceFullCard
           class="collectionCard"
@@ -159,7 +159,7 @@ ul {
   }
   .insetG {
     margin-left: 280px;
-    margin-top: 100px;
+    margin-top: 90px;
   }
 }
 </style>

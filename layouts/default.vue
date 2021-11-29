@@ -10,7 +10,7 @@
   >
     <HeaderBar>
       <NuxtLink class="containedWidth" to="/"
-        ><BananaLogo class="sugarLogo" />
+        ><sugarLogo class="sugarLogo" />
       </NuxtLink>
       <LoginCard class="fixedUP"
     /></HeaderBar>
@@ -30,7 +30,7 @@
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
 import { useConnect } from "~/composables/web3/useConnect";
-import BananaLogo from "~/components/atoms/bananaLogo.vue";
+import sugarLogo from "~/components/atoms/sugarLogo.vue";
 import { useModal } from "~/composables/useModal";
 import {
   collapsed,
@@ -42,7 +42,7 @@ import {
 import HeaderBar from "~/components/nav/HeaderBar.vue";
 export default defineComponent({
   components: {
-    BananaLogo,
+    sugarLogo,
     HeaderBar,
   },
   setup() {
