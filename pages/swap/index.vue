@@ -3,7 +3,9 @@
     <div class="flex-col justify-center items-center">
       <h1 class="mt-8 insetG">Here you can swap your token</h1>
       <div class="collectionsWrapper pb-10 py-4"></div>
-      <div class="flex-col align-middle"></div>
+      <div class="flex-col align-middle">
+        <SwapCard></SwapCard>
+      </div>
     </div>
   </section>
 </template>

@@ -1,17 +1,19 @@
 <template>
-  <div class="dataBoxWrapp">
+  <div class="swapCardDetail">
+    <SwapInputs></SwapInputs>
     <slot></slot>
   </div>
 </template> 
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
+import SwapInputs from "../atoms/swap/SwapInputs.vue";
 export default defineComponent({
   name: "SwapCard",
-
   setup() {
     return {};
   },
+  components: { SwapInputs },
 });
 </script>
 
@@ -58,13 +60,7 @@ p {
   line-height: 23px;
   color: #acacac;
 }
-.dataBoxWrapp {
-  width: 220px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.swapCardDetail {
   border-radius: 10px;
   padding-inline: 30px;
   padding-block: 15px;
