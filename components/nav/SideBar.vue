@@ -7,7 +7,7 @@
     >
 
     <!--     <NuxtLink v-if="!collapsed" to="/"
-      ><BananaLogo class="beyBananaLogo" />
+      ><BananaLogo class="sugarLogo" />
       <p class="-mt-4 pb-12">
         $Sugar: <span> ${{ SugarPrice }}</span>
       </p></NuxtLink
@@ -163,7 +163,7 @@ p {
   transition: all ease 0.3s;
 }
 
-.beyBananaLogo {
+.sugarLogo {
   width: 100%;
   padding-inline: 15px;
   top: 10px;

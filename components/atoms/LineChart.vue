@@ -4,6 +4,11 @@ import { Line } from "vue-chartjs";
 export default {
   extends: Line,
   data() {
+    const DISPLAY = false;
+    const BORDER = true;
+    const CHART_AREA = true;
+    const TICKS = true;
+
     return {
       gradient: null,
     };
@@ -29,10 +34,7 @@ export default {
         ],
         datasets: [
           {
-            fill: {
-              target: "origin",
-              below: "rgba(130, 36, 227, 0.4)",
-            },
+            fill: "origin",
             label: "$Sugar Price",
             data: [2, 10, 5, 9, 0, 6, 20],
             backgroundColor: this.gradient,
@@ -44,6 +46,18 @@ export default {
       {
         responsive: true,
         maintainAspectRatio: false,
+        scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+          },
+          y: {
+            grid: {
+              display: false,
+            },
+          },
+        },
         title: {
           display: true,
           text: "Sugarland Chart",
@@ -53,3 +67,4 @@ export default {
   },
 };
 </script>
+

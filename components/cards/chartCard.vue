@@ -11,13 +11,7 @@ export default {
     LineChart,
   },
   data() {
-    return {
-      chartData: {
-        Books: 24,
-        Magazine: 30,
-        Newspapers: 10,
-      },
-    };
+    return {};
   },
 
   computed: {

@@ -52,7 +52,8 @@ export default defineComponent({
     let Previews = ref([
       {
         id: "1",
-        image: "https://dinopixel.com/preload/0520/pixel-key.png",
+        image:
+          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Box.png",
         collectionName: "NFT Governance Key",
         artistName: "Access to Sugar Governance",
         collectionType: "Ultra Rare",

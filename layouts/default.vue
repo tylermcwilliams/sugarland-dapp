@@ -9,7 +9,9 @@
     "
   >
     <HeaderBar>
-      <NuxtLink to="/"><BananaLogo class="beyBananaLogo" /> </NuxtLink>
+      <NuxtLink class="containedWidth" to="/"
+        ><BananaLogo class="sugarLogo" />
+      </NuxtLink>
       <LoginCard class="fixedUP"
     /></HeaderBar>
 
@@ -60,7 +62,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.beyBananaLogo {
+.containedWidth {
+  max-width: 170px;
+}
+.sugarLogo {
   width: 170px;
   margin-left: 50px;
 }
