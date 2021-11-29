@@ -26,7 +26,7 @@
           </div>
           <PopFromShadow class="w-52 self-center">
             <button-default
-              placeholder="Discover Collection"
+              placeholder="Mint your NFT"
               @clicked="showMintingModal"
           /></PopFromShadow>
         </PresenceFullCard>
@@ -53,7 +53,7 @@ export default defineComponent({
       {
         id: "1",
         image:
-          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Box.png",
+          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Gif.gif",
         collectionName: "NFT Governance Key",
         artistName: "Access to Sugar Governance",
         collectionType: "Ultra Rare",
@@ -61,7 +61,7 @@ export default defineComponent({
       {
         id: "2",
         image:
-          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Box.png",
+          "https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Gif.gif",
         collectionName: "NFT Box",
         artistName: "Random NFT from Sugarland",
         collectionType: "Rare",
@@ -123,6 +123,7 @@ ul {
 
 .imgCollection {
   width: 150px;
+  border-radius: 10px;
 }
 
 @media (min-width: 320px) {
