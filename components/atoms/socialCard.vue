@@ -1,6 +1,6 @@
 <template>
   <div class="socialIConsWrap flex-row justify-center">
-    <ul class="socialICons">
+    <ul v-if="$colorMode.value === 'dark'" class="socialICons">
       <li>
         <a target="_blank" href="https://twitter.com/sugarlandcoin"
           ><img
@@ -37,6 +37,48 @@
         <a target="_blank" href="https://www.instagram.com/sugarland_IG"
           ><img
             src="https://s2.svgbox.net/social.svg?ic=instagram&color=f2f2f2"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+    </ul>
+    <ul v-else class="socialICons">
+      <li>
+        <a target="_blank" href="https://twitter.com/sugarlandcoin"
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=twitter&color=8224e3"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a target="_blank" href="https://t.me/SugarLandChat"
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=telegram&color=8224e3"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a target="_blank" href="https://discord.gg/V3ZHGHMqpp"
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=discord&color=8224e3"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a target="_blank" href=""
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=facebook&color=8224e3"
+            width="15"
+            height="15"
+        /></a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.instagram.com/sugarland_IG"
+          ><img
+            src="https://s2.svgbox.net/social.svg?ic=instagram&color=8224e3"
             width="15"
             height="15"
         /></a>

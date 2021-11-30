@@ -1,8 +1,15 @@
 <template>
   <div class="flex justify-center">
     <img
+      v-if="$colorMode.value === 'dark'"
       class="logoSugar"
-      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Ext.png"
+      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Dark.png"
+      alt=""
+    />
+    <img
+      v-else
+      class="logoSugar"
+      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Light.png"
       alt=""
     />
   </div>
