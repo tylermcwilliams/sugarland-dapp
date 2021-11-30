@@ -1,0 +1,30 @@
+:root {
+    --color: #190B28;
+    --color-primary: #190B28;
+    --color-secondary: #8224e3;
+    --bg: #f3f5f4;
+    --bg-secondary: #fff;
+    --border-color: #ddd;
+    --color-opaque: #190b2838;
+  }
+  
+  .dark-mode {
+    --color: #ebf4f1;
+    --color-primary: #ebf4f1;
+    --color-secondary: #8224e3;
+    --bg: #251C48;
+    --bg-secondary: #180527;
+    --border-color: #8424e326;
+    --color-opaque: rgba(255, 255, 255, 0.246);
+  }
+
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--bg);
+    color: var(--color);
+    transition: background-color 0.3s;
+  }
+  a {
+    color: var(--color-primary);
+  }

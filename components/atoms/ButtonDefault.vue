@@ -53,6 +53,5 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  color: #fff !important;
 }
 </style>

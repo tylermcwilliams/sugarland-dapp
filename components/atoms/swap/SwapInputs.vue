@@ -86,7 +86,7 @@ h1 {
   text-align: left;
   font-style: normal;
   line-height: 23px;
-  color: #fff;
+
 }
 h2 {
   font-style: normal;
@@ -95,7 +95,7 @@ h2 {
   text-align: left;
   font-style: normal;
   line-height: 23px;
-  color: #fff;
+
   white-space: nowrap;
 }
 

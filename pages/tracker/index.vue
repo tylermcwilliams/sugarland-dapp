@@ -15,25 +15,14 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 
-
 export default defineComponent({
   setup() {
-
     return {};
   },
 });
 </script>
 
 <style>
-body {
-  background-color: #251c48;
-  color: #ededed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-}
-
 div {
   display: flex;
   flex-direction: column;
@@ -60,7 +49,7 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #8224e3;
+  color: var(--color-secondary);
 }
 li {
   padding-block: 5px;
@@ -74,7 +63,6 @@ ul {
   text-align: center;
   font-weight: 400;
   text-align: center;
-  color: rgba(255, 255, 255, 0.688);
 }
 
 .imgCollection {

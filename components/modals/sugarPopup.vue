@@ -78,6 +78,6 @@ export default defineComponent({
   padding-bottom: 60px;
 }
 h1 {
-  color: #fff;
+  color: var(--color-primary);
 }
 </style>

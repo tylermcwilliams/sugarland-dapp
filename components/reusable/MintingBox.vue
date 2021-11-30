@@ -12,7 +12,7 @@
         </li>
         <li v-if="isMintable">
           Minting Fee:
-          <span class="text-white">{{ userData.mintingFee }}</span>
+          <span>{{ userData.mintingFee }}</span>
         </li>
       </ul>
     </div>

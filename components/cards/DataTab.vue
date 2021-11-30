@@ -56,7 +56,7 @@ p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 23px;
   color: #acacac;
 }
@@ -77,7 +77,7 @@ p {
 }
 
 .purple {
-  color: #8224e3 !important;
+  color: var(--color-secondary) !important;
 }
 .swapWrapper {
   max-width: 450px;

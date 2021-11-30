@@ -167,11 +167,10 @@ export default defineComponent({
 
 <style scoped>
 span {
-  color: #fff;
   margin-left: 5px;
 }
 a.nuxt-link-exact-active {
-  color: #8224e3;
+  color: var(--color-secondary);
 }
 div {
   display: flex;
@@ -187,9 +186,13 @@ p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 23px;
-  color: #8224e3 !important;
+  color: var(--color-secondary);
+}
+
+span {
+  font-weight: 500;
 }
 .copyWrapper {
   width: 100%;
@@ -207,9 +210,9 @@ p {
   border-right-width: 1px;
   border-color: #8424e326;
   margin-right: 20px;
-  background-color: #251c48;
   padding-block-start: 120px;
   transition: all ease 0.3s;
+  background-color: var(--bg);
 }
 
 .sugarLogo {
@@ -227,7 +230,6 @@ p {
   font-family: "Montserrat", sans-serif;
   line-height: 2.5;
   text-align: center;
-  color: #ededed;
 }
 
 .closeIcon {
@@ -248,7 +250,7 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #8224e3 !important;
+  color: var(--color-secondary) !important;
   cursor: pointer;
 }
 
@@ -264,12 +266,12 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #8224e3;
+  color: var(--color-secondary);
 }
 .separatorLine {
   width: 150px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-opaque);
   margin-block: 20px;
 }
 
@@ -286,7 +288,7 @@ p {
     font-weight: 400;
     line-height: 23px;
     text-align: center;
-    color: #8224e3 !important;
+    color: var(--color-secondary) !important;
     position: absolute;
     bottom: 10px;
     left: 30px;
@@ -313,7 +315,7 @@ p {
     font-weight: 400;
     line-height: 23px;
     text-align: center;
-    color: #8224e3 !important;
+    color: var(--color-secondary) !important;
     position: absolute;
     bottom: 10px;
     left: 25%;

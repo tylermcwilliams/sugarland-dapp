@@ -12,15 +12,15 @@
             <ul class="text-center">
               <li>
                 Name:
-                <span class="text-white">{{ Preview.collectionName }}</span>
+                <span>{{ Preview.collectionName }}</span>
               </li>
               <li>
                 Util:
-                <span class="text-white">{{ Preview.artistName }} </span>
+                <span>{{ Preview.artistName }} </span>
               </li>
               <li>
                 Type:
-                <span class="text-white">{{ Preview.collectionType }}</span>
+                <span>{{ Preview.collectionType }}</span>
               </li>
             </ul>
           </div>
@@ -74,15 +74,6 @@ export default defineComponent({
 </script>
 
 <style>
-body {
-  background-color: #251c48;
-  color: #ededed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-}
-
 div {
   display: flex;
   flex-direction: column;
@@ -106,7 +97,7 @@ p {
   text-align: center;
   font-weight: 400;
   line-height: 23px;
-  color: #8224e3;
+  color: var(--color-secondary);
 }
 li {
   padding-block: 5px;
@@ -118,7 +109,6 @@ ul {
   line-height: 23px;
   text-align: center;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.688);
 }
 
 .imgCollection {

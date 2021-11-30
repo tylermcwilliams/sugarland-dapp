@@ -16,7 +16,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["@/assets/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -38,6 +38,8 @@ export default {
     "@nuxtjs/tailwindcss",
     //https://composition-api.nuxtjs.org/getting-started/setup
     "@nuxtjs/composition-api/module",
+    //https://nuxtjs.org/tutorials/going-dark-with-nuxtjs-color-mode/
+    "@nuxtjs/color-mode",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

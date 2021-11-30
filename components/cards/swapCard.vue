@@ -68,6 +68,6 @@ p {
 }
 
 .purple {
-  color: #8224e3 !important;
+  color: var(--color-secondary) !important;
 }
 </style>

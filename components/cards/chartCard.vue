@@ -39,7 +39,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #8224e3;
+  color: var(--color-secondary);
   margin-top: 60px;
 }
 canvas#line-chart {

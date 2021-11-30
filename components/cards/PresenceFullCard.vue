@@ -51,7 +51,6 @@ h1 {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #fff;
 }
 
 p {
@@ -66,6 +65,6 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #8224e3 !important;
+  color: var(--color-secondary) !important;
 }
 </style>

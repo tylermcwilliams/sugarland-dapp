@@ -9,10 +9,9 @@
     "
   >
     <HeaderBar>
-      <NuxtLink class="containedWidth" to="/"
-        ><sugarLogo class="sugarLogo" />
-      </NuxtLink>
-      <LoginCard class="fixedUP"
+      <NuxtLink class="containedWidth" to="/"> <SugarLogo /> </NuxtLink>
+      <ColorModePicker class="fixedUP" />
+      <LoginCard
     /></HeaderBar>
 
     <div @click="toggleSidebar" class="burgerMenu">
@@ -32,6 +31,7 @@ import { defineComponent } from "@nuxtjs/composition-api";
 import { useConnect } from "~/composables/web3/useConnect";
 import sugarLogo from "~/components/atoms/sugarLogo.vue";
 import { useModal } from "~/composables/useModal";
+import colorModePicker from "~/components/atoms/colorModePicker.vue";
 import {
   collapsed,
   closed,
@@ -40,10 +40,12 @@ import {
   sidebarClose,
 } from "~/composables/toggleSidebar.ts";
 import HeaderBar from "~/components/nav/HeaderBar.vue";
+import SugarLogo from "~/components/atoms/sugarLogo.vue";
 export default defineComponent({
   components: {
     sugarLogo,
     HeaderBar,
+    SugarLogo,
   },
   setup() {
     const { showMintingModal } = useModal();
@@ -56,6 +58,7 @@ export default defineComponent({
       toggleSidebar,
       sidebarWidth,
       sidebarClose,
+      colorModePicker,
     };
   },
 });
@@ -65,10 +68,7 @@ export default defineComponent({
 .containedWidth {
   max-width: 170px;
 }
-.sugarLogo {
-  width: 170px;
-  margin-left: 50px;
-}
+
 body {
   overflow-x: hidden;
 }
@@ -107,7 +107,7 @@ body {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #8224e3 !important;
+  color: var(--color-secondary) !important;
   cursor: pointer;
   white-space: nowrap;
   text-align: center;
@@ -122,12 +122,12 @@ body {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8224e3;
+  background: var(--color-secondary);
   border: 0px none #ffffff;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8224e3;
+  background: var(--color-secondary);
 }
 ::-webkit-scrollbar-thumb:active {
   background: #7021c0;

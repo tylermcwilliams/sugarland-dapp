@@ -24,11 +24,12 @@ export default defineComponent({
 
 <style scoped>
 .logoSugar {
-  margin-block: 12px;
-  margin-block-end: 33px;
+  margin-block: 15px;
+  margin-inline-start: 50px;
   cursor: pointer;
   transform-style: preserve-3d;
   animation: rotate3d 5s linear infinite;
+  width: 170px;
 }
 
 /* @keyframes rotate3d {

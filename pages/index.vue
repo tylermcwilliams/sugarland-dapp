@@ -36,7 +36,6 @@ import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import sugarPopup from "~/components/modals/sugarPopup.vue";
 import { useModal } from "~/composables/useModal";
 import sugPrice from "~/composables/getSugarPrice.ts";
-/* import { useModal } from "~/composables/useModal"; */
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
 import ChartCard from "~/components/cards/chartCard.vue";
@@ -65,15 +64,6 @@ export default defineComponent({
 </script>
 
 <style>
-body {
-  background-color: #251c48;
-  color: #ededed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-}
-
 div {
   display: flex;
   flex-direction: column;
@@ -86,7 +76,6 @@ h1 {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
-  color: #ededed;
   line-height: 1.8;
 }
 
@@ -102,7 +91,7 @@ p {
 }
 
 span {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 14px;
 }
 

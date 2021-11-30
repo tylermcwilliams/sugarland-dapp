@@ -24,7 +24,8 @@ export default defineComponent({
   left: 0;
   width: 100vw;
   height: 70px;
-  border-block-end: solid 1px #382b6a;
-  background-color: #251c48;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--border-color);
+  background-color: var(--bg);
 }
 </style>
