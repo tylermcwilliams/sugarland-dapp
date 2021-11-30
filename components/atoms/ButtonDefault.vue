@@ -1,5 +1,5 @@
 <template>
-  <button @click="clicked">{{ placeholder }}</button>
+  <button class="buttonDefault" @click="clicked">{{ placeholder }}</button>
 </template>
 
 <script>
@@ -28,30 +28,31 @@ export default defineComponent({
 
 
 <style scoped>
+.buttonDefault {
+  background-color: var(--border-color);
+  padding-inline: 25px;
+  padding-block: 7px;
+  border-radius: 10px;
+}
+
 h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 23px;
   color: #acacac;
 }
 
 button {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 13px;
   line-height: 23px;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 23px;
 }
 </style>

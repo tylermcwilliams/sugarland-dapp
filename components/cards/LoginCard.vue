@@ -1,18 +1,16 @@
 <template>
   <div class="flying">
-    <PopFromShadow class="w-52">
-      <ButtonDefault
-        v-if="!active"
-        placeholder="Connect Your Wallet"
-        @clicked="showMintingModal"
-      />
-      <ButtonDefault
-        v-else
-        :placeholder="formatAddress(account) + ' [Disconnect]'"
-        @clicked="deactivate"
-      />
-      <!-- <span v-if="active"> {{ account }}... </span> -->
-    </PopFromShadow>
+    <ButtonDefault
+      v-if="!active"
+      placeholder="Connect Your Wallet"
+      @clicked="showMintingModal"
+    />
+    <ButtonDefault
+      v-else
+      :placeholder="formatAddress(account) + ' [Disconnect]'"
+      @clicked="deactivate"
+    />
+    <!-- <span v-if="active"> {{ account }}... </span> -->
   </div>
 </template>
 

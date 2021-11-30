@@ -24,8 +24,12 @@
           <input class="inputText" type="text" placeholder="0.00" />
         </div>
 
-        <button v-if="!active" class="buttonPresent buttonDefault">Connect Wallet</button>
-        <button v-else class="buttonPresent buttonDefault">Swap</button>
+        <ButtonDefault
+          v-if="!active"
+          placeholder="Connect Your Wallet"
+          @clicked="showMintingModal"
+        />
+        <ButtonDefault v-else placeholder="Swap" @clicked="deactivate" />
       </div>
     </PopFromShadow>
   </div>
@@ -35,15 +39,18 @@
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
+import LoginPopup from "~/components/modals/LoginPopup.vue";
 import ChooseToken from "./ChooseToken.vue";
+import { useModal } from "~/composables/useModal";
 
 export default defineComponent({
   name: "SwapInputs",
 
-  setup(props) {
+  setup() {
     const { active } = useWeb3();
+    const { showMintingModal } = useModal(LoginPopup);
 
-    return { active };
+    return { active, showMintingModal };
   },
   components: { PopFromShadow, ChooseToken },
 });
