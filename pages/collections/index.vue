@@ -24,11 +24,11 @@
               </li>
             </ul>
           </div>
-          <PopFromShadow class="w-52 self-center">
-            <button-default
-              placeholder="Mint your NFT"
-              @clicked="showMintingModal"
-          /></PopFromShadow>
+          <button-default
+            class="buttonDefault"
+            placeholder="Mint your NFT"
+            @clicked="showMintingModal"
+          />
         </PresenceFullCard>
       </div>
       <div class="flex-col align-middle"></div>
@@ -74,6 +74,12 @@ export default defineComponent({
 </script>
 
 <style>
+.buttonDefault {
+  background-color: var(--border-color);
+  padding-inline: 25px;
+  padding-block: 7px;
+  border-radius: 10px;
+}
 div {
   display: flex;
   flex-direction: column;
