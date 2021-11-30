@@ -109,6 +109,11 @@ export default defineComponent({
 
 li {
   margin-inline: 15px;
+  transition: all ease 0.5s;
+}
+
+li:hover {
+  opacity: 0.7;
 }
 .socialICons {
   display: flex;

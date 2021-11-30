@@ -57,6 +57,10 @@ li {
   cursor: pointer;
 }
 
+.changeColorButt {
+  transition: all ease 0.5s;
+}
+
 .changeColorButt.selected {
   fill: var(--color-secondary);
 }
