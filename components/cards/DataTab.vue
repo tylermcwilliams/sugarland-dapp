@@ -44,7 +44,7 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  color: #acacac;
+  color: var(--color-tertiary);
 }
 
 p {
@@ -58,7 +58,7 @@ p {
   font-style: normal;
   font-weight: 500;
   line-height: 23px;
-  color: #acacac;
+  color: var(--color-tertiary);
 }
 .dataBoxWrapp {
   width: 220px;

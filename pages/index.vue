@@ -5,19 +5,19 @@
       <div class="collectionsWrapper pb-10 py-4 flex-row">
         <div class="dataBox flex-row">
           <DataTab>
-            <h1>Current Price:</h1>
+            <h3>Current Price:</h3>
             <span>{{ SugarPrice }}</span>
           </DataTab>
           <DataTab>
-            <h1>Holders:</h1>
+            <h3>Holders:</h3>
             <span>0.00017230725</span>
           </DataTab>
           <DataTab>
-            <h1>Circulating:</h1>
+            <h3>Circulating:</h3>
             <span>0.00017230725</span>
           </DataTab>
           <DataTab>
-            <h1>Market Cap:</h1>
+            <h3>Market Cap:</h3>
             <span>0.00017230725</span>
           </DataTab>
         </div>
@@ -78,6 +78,17 @@ h1 {
   text-align: center;
   line-height: 1.8;
 }
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+  line-height: 1.8;
+  color: var(--color-tertiary);
+}
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -88,11 +99,13 @@ p {
   font-weight: 400;
   line-height: 23px;
   text-align: center;
+  color: var(--color-tertiary);
 }
 
 span {
   font-weight: 400;
   font-size: 14px;
+  color: var(--color-tertiary);
 }
 
 .dataBox {

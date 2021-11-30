@@ -193,6 +193,7 @@ p {
 
 span {
   font-weight: 500;
+  color: var(--color-secondary);
 }
 .copyWrapper {
   width: 100%;

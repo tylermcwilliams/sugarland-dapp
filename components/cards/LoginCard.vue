@@ -45,5 +45,6 @@ export default defineComponent({
   right: 50px;
   top: 16px;
   font-size: 12px;
+  color: var(--color-tertiary);
 }
 </style>
