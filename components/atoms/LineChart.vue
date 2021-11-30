@@ -41,12 +41,9 @@ export default {
       {
         responsive: true,
         maintainAspectRatio: false,
-        lables: {
-          font: {
-            color: "rgba(255, 255, 255, 1)",
-          },
+        legend: {
+          display: false,
         },
-
         scales: {
           x: {
             grid: {
