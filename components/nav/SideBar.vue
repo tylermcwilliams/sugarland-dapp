@@ -208,7 +208,7 @@ span {
   height: 100vh;
   border-style: solid;
   border-right-width: 1px;
-  border-color: #8424e326;
+  border-color: var(--border-color);
   margin-right: 20px;
   padding-block-start: 120px;
   transition: all ease 0.3s;
