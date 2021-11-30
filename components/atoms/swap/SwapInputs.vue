@@ -4,10 +4,13 @@
       ><div class="InnerSwap">
         <h1 class="singleDataSwap">Swap</h1>
 
+        <ChooseToken></ChooseToken>
+        <!-- Primo Input -->
         <div class="singleDataSwap">
           <input class="inputText" type="text" placeholder="0.00" />
         </div>
 
+        <!-- icona cambio -->
         <div class="swapInvert">
           <img
             src="https://s2.svgbox.net/materialui.svg?ic=swap_vertical_circle&color=fff"
@@ -16,13 +19,13 @@
           />
         </div>
 
+        <!-- Secondo Input -->
         <div class="singleDataSwap mb-8">
           <input class="inputText" type="text" placeholder="0.00" />
         </div>
 
-        <PopFromShadow>
-          <button class="buttonPresent">Connect Wallet</button>
-        </PopFromShadow>
+        <button v-if="!active" class="buttonPresent buttonDefault">Connect Wallet</button>
+        <button v-else class="buttonPresent buttonDefault">Swap</button>
       </div>
     </PopFromShadow>
   </div>
@@ -32,6 +35,8 @@
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
+import ChooseToken from "./ChooseToken.vue";
+
 export default defineComponent({
   name: "SwapInputs",
 
@@ -40,7 +45,7 @@ export default defineComponent({
 
     return { active };
   },
-  components: { PopFromShadow },
+  components: { PopFromShadow, ChooseToken },
 });
 </script>
 
@@ -49,6 +54,12 @@ export default defineComponent({
 
 
 <style scoped>
+.buttonDefault {
+  background-color: var(--border-color);
+  padding-inline: 25px;
+  padding-block: 7px;
+  border-radius: 10px;
+}
 .swapInvert {
   margin-block: 10px;
 }
@@ -86,7 +97,6 @@ h1 {
   text-align: left;
   font-style: normal;
   line-height: 23px;
-
 }
 h2 {
   font-style: normal;
