@@ -64,6 +64,14 @@ export default defineComponent({
 </script>
 
 <style>
+body {
+  background: rgb(37, 28, 72);
+  background: linear-gradient(
+    180deg,
+    rgba(37, 28, 72, 1) 0%,
+    rgba(59, 29, 109, 1) 100%
+  );
+}
 div {
   display: flex;
   flex-direction: column;

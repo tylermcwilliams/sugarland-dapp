@@ -1,5 +1,5 @@
 <template>
-  <div class="headerWrap z-50">
+  <div class="headerWrap z-20">
     <slot></slot>
   </div>
 </template>
@@ -24,8 +24,6 @@ export default defineComponent({
   left: 0;
   width: 100vw;
   height: 70px;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--border-color);
-  background-color: var(--bg);
+  background-color: transparent;
 }
 </style>

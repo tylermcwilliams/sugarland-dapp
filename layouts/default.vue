@@ -9,7 +9,6 @@
     "
   >
     <HeaderBar>
-      <NuxtLink class="containedWidth" to="/"> <SugarLogo /> </NuxtLink>
       <ColorModePicker class="fixedUP" />
       <LoginCard
     /></HeaderBar>
@@ -106,11 +105,9 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
   color: var(--color-secondary) !important;
   cursor: pointer;
   white-space: nowrap;
-  text-align: center;
 }
 
 ::-webkit-scrollbar {

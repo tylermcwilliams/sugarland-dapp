@@ -4,6 +4,7 @@
   --color-secondary: #8224e3;
   --color-tertiary: #f3f5f4;
   --bg: #f3f5f4;
+  --sidebar-bg: #f3f5f4;
   --bg-secondary: #fff;
   --bg-tertiary: #9368b7;
   --border-color: #ddd;
@@ -17,6 +18,7 @@
   --color-secondary: #8224e3;
   --color-tertiary: #f3f5f4;
   --bg: #251c48;
+  --sidebar-bg: #251c48;
   --bg-secondary: #180527;
   --bg-tertiary: #311a55;
   --border-color: #8424e326;
@@ -29,6 +31,7 @@ body {
   background-color: var(--bg);
   color: var(--color);
   transition: background-color 0.3s;
+  height: 100vh;
 }
 a {
   color: var(--color-primary);
