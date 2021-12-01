@@ -1,7 +1,7 @@
 <template>
-  <PopFromShadow>
+  <div class="backgroundChart">
     <LineChart :style="myStyles" />
-  </PopFromShadow>
+  </div>
 </template>
 
 <script>
@@ -46,5 +46,13 @@ canvas#line-chart {
   background-color: transparent;
   border-radius: 20px;
   padding: 25px;
+}
+
+.backgroundChart {
+  background: var(--button-color);
+  filter: drop-shadow(0px 23px 19.6721px rgba(0, 0, 0, 0.28));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
 }
 </style>

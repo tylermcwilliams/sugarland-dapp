@@ -1,12 +1,12 @@
 import { ref } from "@nuxtjs/composition-api";
 import axios from "axios";
-const TokenList = ref(null);
+let TokenList = ref({});
 
 const listResults = () => {
   const getTokenList = async () => {
-    const price = await axios.get("https://tokens.swipe.org");
+    const list = await axios.get("https://tokens.swipe.org");
 
-    TokenList.value = price;
+    TokenList.value = list.data["tokens"];
   };
 
   return {

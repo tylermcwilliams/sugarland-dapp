@@ -29,7 +29,7 @@
           placeholder="Connect Your Wallet"
           @clicked="showMintingModal"
         />
-        <ButtonDefault v-else placeholder="Swap" @clicked="deactivate" />
+        <ButtonDefault v-else placeholder="Swap" />
       </div>
     </PopFromShadow>
   </div>

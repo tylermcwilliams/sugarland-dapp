@@ -8,7 +8,12 @@
   </div>
 </template>
 <script>
-import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  onBeforeMount,
+} from "@nuxtjs/composition-api";
 import listResults from "~/composables/getTokenList";
 
 export default defineComponent({

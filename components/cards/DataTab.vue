@@ -1,8 +1,6 @@
 <template>
-  <div class="swapWrapper">
-    <PopFromShadow class="w-52 self-center">
-      <slot></slot>
-    </PopFromShadow>
+  <div class="dataBoxWrapp">
+    <slot></slot>
   </div>
 </template> 
 
@@ -62,24 +60,18 @@ p {
 }
 .dataBoxWrapp {
   width: 220px;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--button-color);
+  filter: drop-shadow(0px 23px 19.6721px rgba(0, 0, 0, 0.28));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding-inline: 30px;
-  padding-block: 15px;
-}
-
-.swapWrapper {
-  margin-inline: 20px !important;
+  padding-block: 20px;
+  margin-inline: 20px;
 }
 
 .purple {
   color: var(--color-secondary) !important;
-}
-.swapWrapper {
-  max-width: 450px;
 }
 </style>

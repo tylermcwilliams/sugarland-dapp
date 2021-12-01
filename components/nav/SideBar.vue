@@ -327,6 +327,7 @@ span {
   }
   .displayDesktop {
     display: flex;
+
   }
 }
 </style>
