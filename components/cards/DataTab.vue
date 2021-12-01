@@ -64,6 +64,7 @@ p {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 10px;
+  box-shadow: 0px 7px 31px -2px #3b2162;
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding-inline: 30px;
   padding-block: 20px;

@@ -1,6 +1,7 @@
 <template>
   <div class="socialIConsWrap flex-row justify-center">
-    <ul v-if="$colorMode.value === 'dark'" class="socialICons">
+    <ul class="socialICons">
+      <!-- v-if="$colorMode.value === 'dark'" -->
       <li>
         <a target="_blank" href="https://twitter.com/sugarlandcoin"
           ><img
@@ -42,7 +43,7 @@
         /></a>
       </li>
     </ul>
-    <ul v-else class="socialICons">
+    <!--  <ul v-else class="socialICons">
       <li>
         <a target="_blank" href="https://twitter.com/sugarlandcoin"
           ><img
@@ -83,7 +84,7 @@
             height="15"
         /></a>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

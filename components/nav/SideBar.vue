@@ -1,12 +1,14 @@
 <template>
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
-    <NuxtLink class="containedWidth" to="/"> <SugarLogo /> </NuxtLink>
+    <NuxtLink v-if="!collapsed" class="containedWidth" to="/">
+      <SugarLogo />
+    </NuxtLink>
     <NuxtLink v-if="!collapsed" to="/">
       <p class="-mt-12 linkBox sugarPrice">Sugar: $ {{ SugarPrice }}</p>
     </NuxtLink>
 
     <div class="linkWrapper">
-      <div class="displayMobile linkBox">
+      <div v-if="!collapsed" class="displayMobile linkBox">
         <div v-if="!collapsed" @click="toggleSidebar">
           <NuxtLink
             v-for="link in utilLinks"
@@ -251,7 +253,7 @@ p {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-right: 20px;
-  padding-block-start: 20px;
+  padding-block-start: 28px;
   transition: all ease 0.3s;
   background: #261d4c;
 }
@@ -271,6 +273,9 @@ p {
   font-family: "Montserrat", sans-serif;
   line-height: 2.5;
   align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .closeIcon {

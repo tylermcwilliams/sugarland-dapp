@@ -29,11 +29,14 @@ export default defineComponent({
 
 <style scoped>
 .buttonDefault {
-  background-color: var(--button-color);
-  color: var(--color-tertiary);
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
+  box-shadow: 0px 7px 31px -2px #3b2162;
+  color: #fff;
   padding-inline: 25px;
   padding-block: 7px;
-  border-radius: 10px;
 }
 
 h1 {

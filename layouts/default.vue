@@ -14,8 +14,13 @@
     /></HeaderBar>
 
     <div @click="toggleSidebar" class="burgerMenu">
-      <h1 v-if="!collapsed" class="opclText">close menu</h1>
-      <h1 v-else class="opclText">open menu</h1>
+      <img
+        src="https://s2.svgbox.net/hero-solid.svg?ic=menu-alt-2&color=fff"
+        width="30"
+        height="30"
+      />
+      <!-- <h1 v-if="!collapsed" class="opclText">close menu</h1>
+      <h1 v-else class="opclText">open menu</h1> -->
     </div>
 
     <SideBar class="fixed sm:relative w-80 min-h-screen z-20" />
