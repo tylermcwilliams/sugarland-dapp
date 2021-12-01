@@ -61,12 +61,6 @@ export default defineComponent({
 
 
 <style scoped>
-.buttonDefault {
-  background-color: var(--border-color);
-  padding-inline: 25px;
-  padding-block: 7px;
-  border-radius: 10px;
-}
 .swapInvert {
   margin-block: 10px;
 }

@@ -29,7 +29,8 @@ export default defineComponent({
 
 <style scoped>
 .buttonDefault {
-  background-color: var(--border-color);
+  background-color: var(--button-color);
+  color: var(--color-tertiary);
   padding-inline: 25px;
   padding-block: 7px;
   border-radius: 10px;

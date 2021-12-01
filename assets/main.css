@@ -5,8 +5,9 @@
   --color-tertiary: #f3f5f4;
   --bg: #f3f5f4;
   --bg-secondary: #fff;
-  --bg-tertiary: #9368B7;
+  --bg-tertiary: #9368b7;
   --border-color: #ddd;
+  --button-color: #331d5f;
   --color-opaque: #190b2838;
 }
 
@@ -19,6 +20,7 @@
   --bg-secondary: #180527;
   --bg-tertiary: #311a55;
   --border-color: #8424e326;
+  --button-color: #8424e326;
   --color-opaque: rgba(255, 255, 255, 0.246);
 }
 
