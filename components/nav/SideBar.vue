@@ -314,6 +314,7 @@ p {
 
 .sugarPrice {
   padding-inline-start: 19px;
+  color: #fff;
 }
 
 @media (min-width: 320px) {
