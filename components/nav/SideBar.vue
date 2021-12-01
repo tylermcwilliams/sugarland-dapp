@@ -128,24 +128,24 @@ export default defineComponent({
     ];
     const otherLinks = [
       {
-        page: "/collections",
+        page: "#",
         title: "Mint NFT",
         icon: "https://s2.svgbox.net/hero-solid.svg?ic=newspaper&color=fff",
       },
       {
-        page: "/profile",
+        page: "#",
         title: "Stake NFT",
         icon: "https://s2.svgbox.net/octicons.svg?ic=graph-bold&color=fff",
       },
     ];
     const lastLinks = [
       {
-        page: "/governance",
+        page: "#",
         title: "Governance",
         icon: "https://s2.svgbox.net/materialui.svg?ic=how_to_vote&color=fff",
       },
       {
-        page: "/merch",
+        page: "#",
         title: "Merch",
         icon: "https://s2.svgbox.net/hero-solid.svg?ic=shopping-bag&color=fff",
       },
@@ -183,7 +183,7 @@ export default defineComponent({
 
 <style scoped>
 .deactive {
-  opacity: 0.6;
+  opacity: 0.3;
 }
 .singleMenuItem {
   display: flex;
