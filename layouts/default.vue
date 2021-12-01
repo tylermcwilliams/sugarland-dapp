@@ -9,7 +9,7 @@
     "
   >
     <HeaderBar>
-      <ColorModePicker class="fixedUP" />
+      <!-- <ColorModePicker class="fixedUP" /> -->
       <LoginCard
     /></HeaderBar>
 

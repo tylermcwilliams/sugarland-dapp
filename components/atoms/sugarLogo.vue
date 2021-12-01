@@ -31,7 +31,7 @@ export default defineComponent({
 
 <style scoped>
 .logoSugar {
-  margin-block-end: 65px;
+  margin-block-end: 25px;
   cursor: pointer;
   transform-style: preserve-3d;
   animation: rotate3d 5s linear infinite;

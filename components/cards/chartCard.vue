@@ -21,7 +21,7 @@ export default {
   computed: {
     myStyles() {
       return {
-        width: `800px`,
+        width: `730px`,
         height: `350px`,
         position: "relative",
         color: `white`,

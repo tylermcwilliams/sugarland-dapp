@@ -49,21 +49,20 @@ p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 23px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 23px;
   color: var(--color-tertiary);
 }
 .dataBoxWrapp {
   width: 220px;
-  background: var(--button-color);
-  filter: drop-shadow(0px 23px 19.6721px rgba(0, 0, 0, 0.28));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 10px;
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding-inline: 30px;

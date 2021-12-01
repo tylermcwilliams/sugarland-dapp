@@ -6,7 +6,7 @@
         <div class="dataBox flex-row">
           <DataTab>
             <h3>Current Price:</h3>
-            <span>{{ SugarPrice }}</span>
+            <span>$ {{ SugarPrice }}</span>
           </DataTab>
           <DataTab>
             <h3>Holders:</h3>
@@ -65,11 +65,11 @@ export default defineComponent({
 
 <style>
 body {
-  background: rgb(37, 28, 72);
+  background: rgb(38, 29, 76);
   background: linear-gradient(
-    180deg,
-    rgba(37, 28, 72, 1) 0%,
-    rgba(59, 29, 109, 1) 100%
+    115deg,
+    rgba(38, 29, 76, 1) 0%,
+    rgba(91, 39, 145, 1) 100%
   );
 }
 div {
@@ -82,7 +82,6 @@ h1 {
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
-  line-height: 23px;
   text-align: center;
   line-height: 1.8;
 }
@@ -92,7 +91,6 @@ h3 {
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
-  line-height: 23px;
   text-align: center;
   line-height: 1.8;
   color: var(--color-tertiary);
@@ -103,16 +101,14 @@ p {
   font-style: normal;
   font-size: 16px;
   line-height: 23px;
-  text-align: center;
   font-weight: 400;
-  line-height: 23px;
   text-align: center;
   color: var(--color-tertiary);
 }
 
 span {
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 18px;
   color: var(--color-tertiary);
 }
 
@@ -143,7 +139,6 @@ span {
   }
   .spacingTot {
     margin-block: 40px;
-    margin-inline-start: 250px;
   }
 }
 </style>

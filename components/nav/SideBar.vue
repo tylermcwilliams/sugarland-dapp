@@ -2,61 +2,69 @@
   <div class="sideBarWrap" :style="{ width: sidebarWidth }">
     <NuxtLink class="containedWidth" to="/"> <SugarLogo /> </NuxtLink>
     <NuxtLink v-if="!collapsed" to="/">
-      <p class="-mt-4 pb-12">
-        $Sugar: <span> ${{ SugarPrice }}</span>
-      </p></NuxtLink
-    >
+      <p class="-mt-12 linkBox sugarPrice">Sugar: $ {{ SugarPrice }}</p>
+    </NuxtLink>
 
-    <!--     <NuxtLink v-if="!collapsed" to="/"
-      ><sugarLogo class="sugarLogo" />
-      <p class="-mt-4 pb-12">
-        $Sugar: <span> ${{ SugarPrice }}</span>
-      </p></NuxtLink
-    > -->
     <div class="linkWrapper">
-      <div class="displayMobile text-left">
+      <div class="displayMobile linkBox">
         <div v-if="!collapsed" @click="toggleSidebar">
           <NuxtLink
             v-for="link in utilLinks"
             :key="link.title"
             class="p-2 baseStyle self-center text-left"
             :to="link.page"
-            >{{ link.title }}</NuxtLink
+          >
+            <img class="iconSide" :src="link.icon" alt="" />
+            {{ link.title }}</NuxtLink
           >
         </div>
       </div>
-      <div class="displayDesktop text-left">
+
+      <div class="displayDesktop linkBox">
         <div class="text-left" v-if="!collapsed">
           <NuxtLink
             v-for="link in utilLinks"
             :key="link.title"
             class="p-2 baseStyle self-center"
             :to="link.page"
-            >{{ link.title }}</NuxtLink
+          >
+            <span class="singleMenuItem">
+              <img class="iconSide" :src="link.icon" alt="" />{{
+                link.title
+              }}</span
+            ></NuxtLink
           >
         </div>
-        <div class="separatorLine"></div>
       </div>
-      <div class="displayDesktop text-left">
+      <div class="displayDesktop linkBox">
         <div class="text-left" v-if="!collapsed">
           <NuxtLink
             v-for="link in otherLinks"
             :key="link.title"
             class="p-2 baseStyle self-center"
             :to="link.page"
-            >{{ link.title }}</NuxtLink
+          >
+            <span class="singleMenuItem deactive">
+              <img class="iconSide" :src="link.icon" alt="" />{{
+                link.title
+              }}</span
+            ></NuxtLink
           >
         </div>
-        <div class="separatorLine"></div>
       </div>
-      <div class="displayDesktop text-left">
+      <div class="displayDesktop linkBox">
         <div class="text-left" v-if="!collapsed">
           <NuxtLink
             v-for="link in lastLinks"
             :key="link.title"
             class="p-2 baseStyle self-center"
             :to="link.page"
-            >{{ link.title }}</NuxtLink
+          >
+            <span class="singleMenuItem deactive">
+              <img class="iconSide" :src="link.icon" alt="" />{{
+                link.title
+              }}</span
+            ></NuxtLink
           >
         </div>
       </div>
@@ -105,34 +113,41 @@ export default defineComponent({
       {
         page: "/",
         title: "Stats",
+        icon: "https://s2.svgbox.net/hero-solid.svg?ic=chart-bar&color=fff",
       },
       {
         page: "/swap",
         title: "Swap",
+        icon: "https://s2.svgbox.net/materialui.svg?ic=swap_horizontal_circle&color=fff",
       },
       {
         page: "/tracker",
         title: "Reflections",
+        icon: "https://s2.svgbox.net/materialui.svg?ic=stars&color=fff",
       },
     ];
     const otherLinks = [
       {
         page: "/collections",
-        title: "Mint NFT [SOON]",
+        title: "Mint NFT",
+        icon: "https://s2.svgbox.net/hero-solid.svg?ic=newspaper&color=fff",
       },
       {
         page: "/profile",
-        title: "Stake NFT [SOON]",
+        title: "Stake NFT",
+        icon: "https://s2.svgbox.net/octicons.svg?ic=graph-bold&color=fff",
       },
     ];
     const lastLinks = [
       {
         page: "/governance",
-        title: "Governance [SOON]",
+        title: "Governance",
+        icon: "https://s2.svgbox.net/materialui.svg?ic=how_to_vote&color=fff",
       },
       {
         page: "/merch",
-        title: "Merch [SOON]",
+        title: "Merch",
+        icon: "https://s2.svgbox.net/hero-solid.svg?ic=shopping-bag&color=fff",
       },
     ];
 
@@ -167,14 +182,39 @@ export default defineComponent({
 
 
 <style scoped>
+.deactive {
+  opacity: 0.6;
+}
+.singleMenuItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconSide {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+.linkBox {
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
+  width: 200px;
+  margin-block: 20px;
+  padding-block: 10px;
+  padding-inline: 10px;
+}
 .linkWrapper {
   display: flex;
   align-items: flex-start;
 }
 span {
   margin-left: 5px;
+  font-weight: 500;
+  font-size: 14px;
 }
-a.nuxt-link-exact-active {
+a.nuxt-link-exact-active span:not(.deactive) {
   color: var(--color-secondary);
 }
 div {
@@ -196,10 +236,6 @@ p {
   color: var(--color-secondary);
 }
 
-span {
-  font-weight: 500;
-  color: var(--color-secondary);
-}
 .copyWrapper {
   width: 100%;
   align-items: center;
@@ -212,18 +248,12 @@ span {
   display: flex;
   align-items: center;
   height: 100vh;
-  border-style: solid;
-  border-right-width: 1px;
-  border-color: var(--border-color);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   margin-right: 20px;
   padding-block-start: 20px;
   transition: all ease 0.3s;
-  background: rgb(37, 28, 72);
-  background: linear-gradient(
-    353deg,
-    rgba(37, 28, 72, 1) 0%,
-    rgba(59, 29, 109, 1) 100%
-  );
+  background: #261d4c;
 }
 
 .sugarLogo {
@@ -236,7 +266,7 @@ span {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   text-align: left;
   font-family: "Montserrat", sans-serif;
   line-height: 2.5;
@@ -280,6 +310,10 @@ span {
   height: 1px;
   background-color: var(--color-opaque);
   margin-block: 20px;
+}
+
+.sugarPrice {
+  padding-inline-start: 19px;
 }
 
 @media (min-width: 320px) {
