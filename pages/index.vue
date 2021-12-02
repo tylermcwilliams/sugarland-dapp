@@ -129,7 +129,7 @@ span {
   }
   .collectionsWrapper {
     padding-block: 40px;
-    margin-inline-start: 290px;
+    margin-inline-start: 390px;
   }
 }
 

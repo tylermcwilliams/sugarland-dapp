@@ -49,6 +49,7 @@ import PopFromShadow from "../atoms/popFromShadow.vue";
 import ButtonDefault from "~/components/atoms/ButtonDefault.vue";
 import LoginPopup from "~/components/modals/LoginPopup.vue";
 import { useModal } from "~/composables/useModal";
+
 export default defineComponent({
   name: "reflectionCard",
 
@@ -62,7 +63,12 @@ export default defineComponent({
     });
     const { showMintingModal } = useModal(LoginPopup);
 
-    return { elementsCard, active, ButtonDefault, showMintingModal };
+    return {
+      elementsCard,
+      active,
+      ButtonDefault,
+      showMintingModal,
+    };
   },
   components: { PopFromShadow },
 });

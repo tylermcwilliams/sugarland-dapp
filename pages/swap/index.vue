@@ -94,7 +94,7 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-inline-start: 280px;
+
   }
   .insetG {
     margin-left: 280px;
