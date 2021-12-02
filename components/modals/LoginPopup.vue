@@ -78,7 +78,7 @@ export default defineComponent({
 }
 
 h1 {
-  color: #180527;
+  color: #fff;
 }
 .modalBackground {
   position: fixed;
@@ -86,9 +86,7 @@ h1 {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(55, 55, 55, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #261D4C;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +95,10 @@ h1 {
 .modalPopUp {
   max-height: 500px;
   max-width: 650px;
-  background: #faefef;
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,6 @@
 <template>
   <div class="newsCard">
-    <h1>Sugar News</h1>
+    <h1>Sugarland News</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id dolorum,
       facilis perspiciatis quo est quasi! Dolor sit amet consectetur adipisicing
@@ -62,7 +62,8 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  color: var(--color-secondary) !important;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
 }
 </style>

@@ -1,28 +1,26 @@
 <template>
-  <section class="flex-row h-screen w-screen">
-    <div class="flex-col justify-center items-center">
-      <h1 class="mt-12 insetG"></h1>
-      <div class="collectionsWrapper pb-10 py-4 flex-row">
-        <div class="dataBox flex-row">
-          <DataTab>
-            <h3>Current Price:</h3>
-            <span>$ {{ SugarPrice }}</span>
-          </DataTab>
-          <DataTab>
-            <h3>Holders:</h3>
-            <span>0.00017230725</span>
-          </DataTab>
-          <DataTab>
-            <h3>Circulating:</h3>
-            <span>0.00017230725</span>
-          </DataTab>
-          <DataTab>
-            <h3>Market Cap:</h3>
-            <span>0.00017230725</span>
-          </DataTab>
-        </div>
+  <section class="flex-row h-screen w-screen collectionsWrapper">
+    <div class="pb-10 py-4">
+      <div class="dataBox flex-row">
+        <DataTab>
+          <h3>Current Price:</h3>
+          <span>$ {{ SugarPrice }}</span>
+        </DataTab>
+        <DataTab>
+          <h3>Holders:</h3>
+          <span>0.00017230725</span>
+        </DataTab>
+        <DataTab>
+          <h3>Circulating:</h3>
+          <span>0.00017230725</span>
+        </DataTab>
+        <DataTab>
+          <h3>Market Cap:</h3>
+          <span>0.00017230725</span>
+        </DataTab>
       </div>
-      <div class="flex-row spacingTot">
+
+      <div class="flex-row">
         <ChartCard></ChartCard>
         <NewsCard> </NewsCard>
       </div>
@@ -114,7 +112,7 @@ span {
 }
 
 .dataBox {
-  margin-top: 40px;
+  margin-block: 40px;
 }
 .wrapper {
   max-width: 420px;
@@ -129,18 +127,19 @@ span {
     max-width: 420px;
     padding-inline: 40px;
   }
+  .collectionsWrapper {
+    padding-block: 40px;
+    margin-inline-start: 290px;
+  }
 }
 
 @media (min-width: 620px) {
   .wrapper {
     max-width: 485px;
   }
-  .insetG {
-    margin-left: 150px;
-  }
-  .spacingTot {
-    margin-block: 40px;
-    margin-inline-start: 290px;
+  .collectionsWrapper {
+    padding-block: 40px;
+    margin-inline-start: 390px;
   }
 }
 </style>

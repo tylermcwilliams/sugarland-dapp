@@ -3,7 +3,7 @@
     <div class="dataRefBox">
       <h1 class="singleData">Your $Sugar Details:</h1>
 
-      <div v-if="!active" class="singleData buttonPresent">
+      <div class="singleData buttonPresent">
         <input
           class="inputText"
           type="text"
@@ -15,7 +15,8 @@
             placeholder="Connect Your Wallet"
             @clicked="showMintingModal"
           />
-          <ButtonDefault v-if="!active" placeholder="Check from address" />
+          <ButtonDefault v-else placeholder="You like Sugar, heh?" />
+          <ButtonDefault placeholder="Check from address" />
         </div>
       </div>
 

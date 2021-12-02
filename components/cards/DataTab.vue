@@ -68,7 +68,7 @@ p {
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding-inline: 30px;
   padding-block: 20px;
-  margin-inline: 20px;
+  margin-inline-end: 45px;
 }
 
 .purple {
