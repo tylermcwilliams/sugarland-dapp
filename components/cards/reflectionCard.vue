@@ -1,20 +1,25 @@
 <template>
   <div class="reflectCard">
-    <PopFromShadow
-      ><div class="dataRefBox">
-        <h1 class="singleData">Your $Sugar Details:</h1>
+    <div class="dataRefBox">
+      <h1 class="singleData">Your $Sugar Details:</h1>
 
-        <div v-if="!active" class="singleData buttonPresent">
-          <input
-            class="inputText"
-            type="text"
-            placeholder="Your wallet Address"
+      <div v-if="!active" class="singleData buttonPresent">
+        <input
+          class="inputText"
+          type="text"
+          placeholder="Your wallet Address"
+        />
+        <div class="buttonsReflections">
+          <ButtonDefault
+            v-if="!active"
+            placeholder="Connect Your Wallet"
+            @clicked="showMintingModal"
           />
-          <PopFromShadow>
-            <button class="checkButton">Check</button>
-          </PopFromShadow>
+          <ButtonDefault v-if="!active" placeholder="Check from address" />
         </div>
+      </div>
 
+      <div class="resutsWrapper">
         <div class="singleData">
           <h2>Current Tokens:</h2>
           <span class="numbersData">{{ elementsCard.CurrentBalance }}</span>
@@ -32,7 +37,7 @@
           <span class="numbersData">{{ elementsCard.TotalReflections }}</span>
         </div>
       </div>
-    </PopFromShadow>
+    </div>
   </div>
 </template> 
 
@@ -40,6 +45,9 @@
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
 import PopFromShadow from "../atoms/popFromShadow.vue";
+import ButtonDefault from "~/components/atoms/ButtonDefault.vue";
+import LoginPopup from "~/components/modals/LoginPopup.vue";
+import { useModal } from "~/composables/useModal";
 export default defineComponent({
   name: "reflectionCard",
 
@@ -51,8 +59,9 @@ export default defineComponent({
       TotalSold: 10000,
       TotalReflections: 10000,
     });
+    const { showMintingModal } = useModal(LoginPopup);
 
-    return { elementsCard, active };
+    return { elementsCard, active, ButtonDefault, showMintingModal };
   },
   components: { PopFromShadow },
 });
@@ -63,6 +72,17 @@ export default defineComponent({
 
 
 <style scoped>
+.resutsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.buttonsReflections {
+  display: flex;
+  flex-direction: row;
+  margin-block: 20px;
+}
 .buttonPresent {
   display: flex;
   flex-direction: row;
@@ -86,7 +106,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
   padding-inline: 50px;
   padding-block: 30px;
@@ -94,7 +114,7 @@ export default defineComponent({
 
 .singleData {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: left;
   margin-block: 5px;
@@ -107,14 +127,19 @@ export default defineComponent({
 }
 
 .reflectCard {
-  max-height: 490px;
-  max-width: 700px;
+  max-height: 800px;
+  width: 650px;
   display: flex;
   justify-content: center;
-  align-items: left;
-  padding-block: 20px;
-  padding-inline: 20px;
+  align-items: center;
+
+  padding-inline: 40px;
   margin-left: 320px;
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
+  box-shadow: 0px 7px 31px -2px #3b2162;
 }
 img {
   max-width: 80px;
@@ -124,11 +149,10 @@ img {
 h1 {
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 24px;
   text-align: left;
   font-style: normal;
-  line-height: 23px;
-
+  padding-bottom: 20px;
 }
 h2 {
   font-style: normal;
@@ -142,12 +166,14 @@ h2 {
 }
 
 span {
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-tertiary);
   line-height: 23px;
   text-align: center;
   font-style: normal;
-  font-weight: 200;
-  line-height: 23px;
-  text-align: center;
+  padding-top: 5px;
 }
 </style>
+
+4

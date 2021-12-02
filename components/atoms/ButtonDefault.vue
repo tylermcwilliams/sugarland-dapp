@@ -37,6 +37,7 @@ export default defineComponent({
   color: #fff;
   padding-inline: 25px;
   padding-block: 7px;
+  margin-inline: 10px;
 }
 
 h1 {

@@ -118,14 +118,14 @@ export default defineComponent({
         icon: "https://s2.svgbox.net/hero-solid.svg?ic=chart-bar&color=fff",
       },
       {
-        page: "/swap",
-        title: "Swap",
-        icon: "https://s2.svgbox.net/materialui.svg?ic=swap_horizontal_circle&color=fff",
-      },
-      {
         page: "/tracker",
         title: "Reflections",
         icon: "https://s2.svgbox.net/materialui.svg?ic=stars&color=fff",
+      },
+      {
+        page: "/swap",
+        title: "Swap",
+        icon: "https://s2.svgbox.net/materialui.svg?ic=swap_horizontal_circle&color=fff",
       },
     ];
     const otherLinks = [

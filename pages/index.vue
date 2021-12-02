@@ -24,6 +24,7 @@
       </div>
       <div class="flex-row spacingTot">
         <ChartCard></ChartCard>
+        <NewsCard> </NewsCard>
       </div>
     </div>
   </section>
@@ -139,6 +140,7 @@ span {
   }
   .spacingTot {
     margin-block: 40px;
+    margin-inline-start: 290px;
   }
 }
 </style>

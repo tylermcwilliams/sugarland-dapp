@@ -8,18 +8,16 @@
     <div class="modalPopUp z-30">
       <h1 class="modalTitle">Connect your wallet</h1>
 
-      <PopFromShadow class="w-52 self-center">
-        <button
-          v-for="(wallet, key) in wallets"
-          :key="key"
-          :disabled="connecting"
-          @click="connect(wallet.connector)"
-          class="myButt"
-        >
-          <component :is="wallet.iconURL" class="w-7 h-7 text-white" />
-          {{ wallet.name }}
-        </button>
-      </PopFromShadow>
+      <button
+        v-for="(wallet, key) in wallets"
+        :key="key"
+        :disabled="connecting"
+        @click="connect(wallet.connector)"
+        class="myButt"
+      >
+        <component :is="wallet.iconURL" class="w-7 h-7 text-white mx-3" />
+        {{ wallet.name }}
+      </button>
     </div>
   </div>
 </template>
@@ -73,6 +71,10 @@ export default defineComponent({
   justify-content: space-evenly;
   align-items: center;
   font-weight: 600;
+  background-color: #492479;
+  padding-inline: 25px;
+  padding-block: 7px;
+  border-radius: 10px;
 }
 
 h1 {
@@ -108,5 +110,8 @@ h1 {
 .modalTitle {
   padding-top: 20px;
   padding-bottom: 80px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
 }
 </style>

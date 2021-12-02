@@ -1,8 +1,7 @@
 <template>
   <section class="flex-row h-screen w-screen">
     <div class="flex-col justify-center items-center">
-      <h1 class="mt-8 insetG">Here you can see your token reflections</h1>
-      <div class="collectionsWrapper pb-10 py-4"></div>
+      <div class="collectionsWrapper pb-10 py-8"></div>
       <div class="flex-col align-middle">
         <ReflectionCard></ReflectionCard>
       </div>

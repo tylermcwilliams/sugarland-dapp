@@ -21,7 +21,7 @@ export default {
   computed: {
     myStyles() {
       return {
-        width: `730px`,
+        width: `690px`,
         height: `350px`,
         position: "relative",
         color: `white`,
@@ -49,10 +49,11 @@ canvas#line-chart {
 }
 
 .backgroundChart {
-  background: var(--button-color);
-  filter: drop-shadow(0px 23px 19.6721px rgba(0, 0, 0, 0.28));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(91, 39, 146, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
+  box-shadow: 0px 7px 31px -2px #3b2162;
   border-radius: 10px;
 }
 </style>
