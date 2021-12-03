@@ -28,6 +28,7 @@ export default {
     "~/components/modals/",
     "~/components/nav/",
     "~/components/reusable/",
+    "~/components/cards/token"
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

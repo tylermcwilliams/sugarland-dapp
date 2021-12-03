@@ -39,7 +39,7 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
-import PopFromShadow from "../atoms/popFromShadow.vue";
+import PopFromShadow from "../../atoms/popFromShadow.vue";
 export default defineComponent({
   name: "reflectionCard",
 

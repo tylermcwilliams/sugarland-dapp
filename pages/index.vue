@@ -14,11 +14,11 @@
           </DataTab>
           <DataTab>
             <h3>Circulating:</h3>
-            <span>0.00017230725</span>
+            <span>{{ sugarSupply }}</span>
           </DataTab>
           <DataTab>
             <h3>Market Cap:</h3>
-            <span>0.00017230725</span>
+            <span>$ {{ sugarMarketCap }}</span>
           </DataTab>
         </div>
       </div>
@@ -29,22 +29,21 @@
   </section>
 </template>
 
-
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import sugarPopup from "~/components/modals/sugarPopup.vue";
 import { useModal } from "~/composables/useModal";
-import sugPrice from "~/composables/getSugarPrice.ts";
+import useSugarToken from "~/composables/token/useSugarToken.ts";
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
-import ChartCard from "~/components/cards/chartCard.vue";
+import ChartCard from "~/components/cards/token/chartCard.vue";
 
 export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
 
   setup(mixins) {
-    const { SugarPrice, getSugarPrice } = sugPrice();
+    const { SugarPrice, sugarSupply, sugarMarketCap } = useSugarToken();
 
     const { showMintingModal } = useModal(sugarPopup);
 
@@ -56,7 +55,8 @@ export default defineComponent({
       NuxtSSRScreenSize,
       mixins,
       SugarPrice,
-      getSugarPrice,
+      sugarSupply,
+      sugarMarketCap,
     };
   },
   components: { PopFromShadow, ChartCard },

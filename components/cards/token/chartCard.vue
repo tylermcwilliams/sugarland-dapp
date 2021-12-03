@@ -1,23 +1,39 @@
 <template>
   <div class="backgroundChart">
-    <LineChart :style="myStyles" />
+    <LineChart :labels="labels" :data="prices" :style="myStyles" />
   </div>
 </template>
 
 <script>
 import LineChart from "~/components/atoms/LineChart.vue";
-import PopFromShadow from "../atoms/popFromShadow.vue";
+import PopFromShadow from "../../atoms/popFromShadow.vue";
+import { defineComponent, onMounted, reactive, ref, useFetch } from "@nuxtjs/composition-api";
+import useCoingecko from "~/composables/useCoingecko";
 
-export default {
+export default defineComponent({
   name: "TestChart",
   components: {
     LineChart,
     PopFromShadow,
   },
-  data() {
-    return {};
-  },
+  setup() {
+    const { fetchCoinChart } = useCoingecko();
 
+    const labels = reactive({list:[]});
+    const prices = reactive({list:[]});
+
+    useFetch(async () => {
+      const chartData = await fetchCoinChart("sugarland");
+      const timestamps = []
+      prices.list = chartData?.prices.map((e) => {
+        timestamps.push(new Date(e[0]).toDateString());
+        return e[1].toFixed(10);
+      });
+      labels.list = timestamps
+    });
+
+    return { labels, prices };
+  },
   computed: {
     myStyles() {
       return {
@@ -28,10 +44,8 @@ export default {
       };
     },
   },
-};
+});
 </script>
-
-
 
 <style>
 #app {
