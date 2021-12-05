@@ -71,7 +71,12 @@ export default defineComponent({
   justify-content: space-evenly;
   align-items: center;
   font-weight: 600;
-  background-color: #492479;
+  background: rgb(121, 32, 196);
+  background: linear-gradient(
+    302deg,
+    rgba(121, 32, 196, 1) 0%,
+    rgba(172, 103, 230, 1) 79%
+  );
   padding-inline: 25px;
   padding-block: 7px;
   border-radius: 10px;
@@ -86,7 +91,7 @@ h1 {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: #261D4C;
+  background: #4c147b;
   display: flex;
   justify-content: center;
   align-items: center;

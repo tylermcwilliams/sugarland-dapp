@@ -198,9 +198,12 @@ export default defineComponent({
   margin-right: 5px;
 }
 .linkBox {
-  background: rgba(91, 39, 146, 0.3);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgb(121, 32, 196);
+  background: linear-gradient(
+    302deg,
+    rgba(121, 32, 196, 1) 0%,
+    rgba(172, 103, 230, 1) 79%
+  );
   border-radius: 10px;
   width: 200px;
   margin-block: 20px;
@@ -215,9 +218,10 @@ span {
   margin-left: 5px;
   font-weight: 500;
   font-size: 14px;
+  color: rgba(255, 255, 255, 0.525);
 }
 a.nuxt-link-exact-active span:not(.deactive) {
-  color: var(--color-secondary);
+  color: #fff;
 }
 div {
   display: flex;
@@ -235,7 +239,7 @@ p {
   font-style: normal;
   font-weight: 500;
   line-height: 23px;
-  color: var(--color-secondary);
+  color: rgba(255, 255, 255, 0.457);
 }
 
 .copyWrapper {
@@ -255,7 +259,7 @@ p {
   margin-right: 20px;
   padding-block-start: 28px;
   transition: all ease 0.3s;
-  background: #261d4c;
+  background: #4c147b;
 }
 
 .sugarLogo {

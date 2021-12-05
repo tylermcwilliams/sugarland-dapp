@@ -64,11 +64,11 @@ export default defineComponent({
 
 <style>
 body {
-  background: rgb(38, 29, 76);
+  background: rgb(76, 20, 123);
   background: linear-gradient(
-    115deg,
-    rgba(38, 29, 76, 1) 0%,
-    rgba(91, 39, 145, 1) 100%
+    122deg,
+    rgba(76, 20, 123, 1) 0%,
+    rgba(121, 32, 196, 1) 79%
   );
 }
 div {
