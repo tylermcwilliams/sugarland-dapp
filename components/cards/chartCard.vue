@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { onMounted } from "@nuxtjs/composition-api";
+/* import { onMounted } from "@nuxtjs/composition-api"; */
 import LineChart from "~/components/atoms/LineChart.vue";
 import PopFromShadow from "../atoms/popFromShadow.vue";
 
