@@ -54,6 +54,21 @@
           >
         </div>
       </div>
+
+      <div v-if="!collapsed" class="displayMobile linkBox">
+        <div v-if="!collapsed" @click="toggleSidebar">
+          <NuxtLink
+            v-for="link in otherLinks"
+            :key="link.title"
+            class="p-2 baseStyle self-center text-left"
+            :to="link.page"
+          >
+            <img class="iconSide" :src="link.icon" alt="" />
+            {{ link.title }}</NuxtLink
+          >
+        </div>
+      </div>
+
       <div class="displayDesktop linkBox">
         <div class="text-left" v-if="!collapsed">
           <NuxtLink
@@ -67,6 +82,20 @@
                 link.title
               }}</span
             ></NuxtLink
+          >
+        </div>
+      </div>
+
+      <div v-if="!collapsed" class="displayMobile linkBox">
+        <div v-if="!collapsed" @click="toggleSidebar">
+          <NuxtLink
+            v-for="link in lastLinks"
+            :key="link.title"
+            class="p-2 baseStyle self-center text-left"
+            :to="link.page"
+          >
+            <img class="iconSide" :src="link.icon" alt="" />
+            {{ link.title }}</NuxtLink
           >
         </div>
       </div>
