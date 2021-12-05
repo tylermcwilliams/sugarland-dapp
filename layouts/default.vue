@@ -79,8 +79,8 @@ body {
 @media (min-width: 320px) {
   .burgerMenu {
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 25px;
+    left: 25px;
     width: 30px;
     height: 30px;
     z-index: 40;

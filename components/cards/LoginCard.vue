@@ -45,4 +45,23 @@ export default defineComponent({
   font-size: 12px;
   color: var(--color-tertiary);
 }
+
+@media (min-width: 320px) {
+  .flying {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 12px;
+    color: var(--color-tertiary);
+  }
+}
+@media (min-width: 520px) {
+  .flying {
+    position: absolute;
+    right: 50px;
+    top: 16px;
+    font-size: 12px;
+    color: var(--color-tertiary);
+  }
+}
 </style>

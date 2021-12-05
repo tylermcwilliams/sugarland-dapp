@@ -30,7 +30,7 @@ export default defineComponent({
 
 <style scoped>
 .newsCard {
-  max-height: 490px;
+  height: 350px;
   max-width: 300px;
   display: flex;
   justify-content: center;
@@ -47,6 +47,7 @@ export default defineComponent({
   padding-inline: 30px;
   padding-block: 20px;
   margin-inline: 20px;
+  margin-block: 40px;
 }
 img {
   max-width: 80px;

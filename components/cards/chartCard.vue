@@ -1,6 +1,6 @@
 <template>
   <div class="backgroundChart">
-    <LineChart :style="myStyles" />
+    <LineChart class="testChart" :style="myStyles" />
   </div>
 </template>
 
@@ -59,5 +59,25 @@ canvas#line-chart {
   border-radius: 10px;
   box-shadow: 0px 2px 20px -2px #53378d;
   border-radius: 10px;
+}
+
+@media (min-width: 320px) {
+  .testChart {
+    padding-inline: 120px;
+    margin-inline: 120px;
+  }
+  .backgroundChart {
+    margin-inline: 20px;
+  }
+}
+@media (min-width: 620px) {
+  .testChart {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .backgroundChart {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }
 </style>

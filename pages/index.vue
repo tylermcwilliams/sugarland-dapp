@@ -1,7 +1,7 @@
 <template>
   <section class="flex-row h-screen w-screen collectionsWrapper">
     <div class="pb-10 py-4">
-      <div class="dataBox flex-row">
+      <div class="dataBox">
         <DataTab>
           <h3>Current Price:</h3>
           <span>$ {{ SugarPrice }}</span>
@@ -20,7 +20,7 @@
         </DataTab>
       </div>
 
-      <div class="flex-row">
+      <div class="afterDataBox">
         <ChartCard></ChartCard>
         <NewsCard> </NewsCard>
       </div>
@@ -137,6 +137,11 @@ span {
     justify-content: center;
     align-items: center;
   }
+  .afterDataBox {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 @media (min-width: 620px) {
@@ -151,6 +156,11 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+  }
+  .afterDataBox {
+    display: flex;
+    flex-direction: row;
     align-items: center;
   }
 }
