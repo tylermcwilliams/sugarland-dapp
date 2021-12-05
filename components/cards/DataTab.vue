@@ -60,18 +60,34 @@ p {
 }
 .dataBoxWrapp {
   width: 220px;
-background: rgb(121,32,196);
-background: linear-gradient(302deg, rgba(121,32,196,1) 0%, rgba(172,103,230,1) 79%);
+  background: rgb(121, 32, 196);
+  background: linear-gradient(
+    302deg,
+    rgba(121, 32, 196, 1) 0%,
+    rgba(172, 103, 230, 1) 79%
+  );
 
   border-radius: 10px;
   box-shadow: 0px 2px 20px -2px #53378d;
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding-inline: 30px;
   padding-block: 20px;
-  margin-inline-end: 45px;
 }
 
 .purple {
   color: var(--color-secondary) !important;
+}
+
+@media (min-width: 320px) {
+  .dataBoxWrapp {
+    margin-inline-end: 0;
+    margin-block: 20px;
+  }
+}
+@media (min-width: 620px) {
+  .dataBoxWrapp {
+    margin-inline-end: 45px;
+    margin-block: 20px;
+  }
 }
 </style>

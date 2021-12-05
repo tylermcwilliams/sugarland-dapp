@@ -129,7 +129,13 @@ span {
   }
   .collectionsWrapper {
     padding-block: 40px;
-    margin-inline-start: 390px;
+    margin-inline-start: 0;
+  }
+  .dataBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -140,6 +146,12 @@ span {
   .collectionsWrapper {
     padding-block: 40px;
     margin-inline-start: 390px;
+  }
+  .dataBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
