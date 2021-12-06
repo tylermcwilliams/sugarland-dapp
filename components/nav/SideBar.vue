@@ -229,9 +229,9 @@ export default defineComponent({
 .linkBox {
   background: rgb(121, 32, 196);
   background: linear-gradient(
-    302deg,
-    rgba(121, 32, 196, 1) 0%,
-    rgba(172, 103, 230, 1) 79%
+    122deg,
+    rgba(121, 32, 196, 1) 26%,
+    rgba(236, 104, 143, 1) 83%
   );
   border-radius: 10px;
   width: 200px;

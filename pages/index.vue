@@ -64,11 +64,12 @@ export default defineComponent({
 
 <style>
 body {
-  background: rgb(76, 20, 123);
+  background: rgb(121, 32, 196);
   background: linear-gradient(
     122deg,
-    rgba(76, 20, 123, 1) 0%,
-    rgba(121, 32, 196, 1) 79%
+    rgba(121, 32, 196, 1) 21%,
+    rgba(236, 104, 143, 1) 62%,
+    rgba(121, 32, 196, 1) 89%
   );
 }
 div {
@@ -112,7 +113,8 @@ span {
 }
 
 .dataBox {
-  margin-block: 40px;
+  margin-block-start: 110px;
+  margin-block-end: 40px;
 }
 .wrapper {
   max-width: 420px;

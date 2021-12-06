@@ -13,8 +13,8 @@ export default {
       .getContext("2d")
       .createLinearGradient(0, 0, 0, 450);
 
-    this.gradient.addColorStop(0, "rgba(255, 255, 255, 0.4)");
-    this.gradient.addColorStop(1, "rgba(172, 103, 230, 0.5)");
+    this.gradient.addColorStop(0, "rgba(121,32,196,0.6)");
+    this.gradient.addColorStop(1, "rgba(236,104,143,0.7)");
 
     this.renderChart(
       {

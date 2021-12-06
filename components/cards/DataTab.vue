@@ -60,12 +60,9 @@ p {
 }
 .dataBoxWrapp {
   width: 220px;
-  background: rgb(121, 32, 196);
-  background: linear-gradient(
-    302deg,
-    rgba(121, 32, 196, 1) 0%,
-    rgba(172, 103, 230, 1) 79%
-  );
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   border-radius: 10px;
   box-shadow: 0px 2px 20px -2px #53378d;

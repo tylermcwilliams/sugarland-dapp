@@ -91,7 +91,11 @@ h1 {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: #4c147b;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0px 2px 20px -2px #53378d;
   display: flex;
   justify-content: center;
   align-items: center;
