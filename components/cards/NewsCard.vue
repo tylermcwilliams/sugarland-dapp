@@ -45,7 +45,7 @@ export default defineComponent({
   padding-inline: 30px;
   padding-block: 20px;
   margin-inline: 20px;
-  margin-block: 40px;
+  margin-block: 30px;
 }
 img {
   max-width: 80px;

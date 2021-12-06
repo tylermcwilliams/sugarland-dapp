@@ -112,10 +112,6 @@ span {
   color: var(--color-tertiary);
 }
 
-.dataBox {
-  margin-block-start: 110px;
-  margin-block-end: 20px;
-}
 .wrapper {
   max-width: 420px;
 }
@@ -138,6 +134,8 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-block-start: 50px;
+    margin-block-end: 20px;
   }
   .afterDataBox {
     display: flex;
@@ -159,6 +157,8 @@ span {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-block-start: 110px;
+    margin-block-end: 20px;
   }
   .afterDataBox {
     display: flex;

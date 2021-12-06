@@ -3,7 +3,6 @@
     <div class="InnerSwap">
       <h1 class="singleDataSwap">Swap</h1>
 
-      <ChooseToken></ChooseToken>
       <!-- Primo Input -->
       <div class="singleDataSwap">
         <input class="inputText" type="text" placeholder="0.00" />
@@ -129,7 +128,7 @@ span {
 
 @media (min-width: 320px) {
   .swapCard {
-    margin-left: 50px;
+    margin-left: 0;
   }
 }
 @media (min-width: 620px) {

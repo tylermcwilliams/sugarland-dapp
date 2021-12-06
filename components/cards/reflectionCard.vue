@@ -21,23 +21,6 @@
       </div>
 
       <div class="resutsWrapper">
-        <!--         <div class="singleData">
-          <h2>Current Tokens:</h2>
-          <span class="numbersData">{{ elementsCard.CurrentBalance }}</span>
-        </div>
-        <div class="singleData">
-          <h2>Total Purchased till date:</h2>
-          <span class="numbersData">{{ elementsCard.TotalPurchased }}</span>
-        </div>
-        <div class="singleData">
-          <h2>Total Sold till date:</h2>
-          <span class="numbersData">{{ elementsCard.TotalSold }}</span>
-        </div>
-        <div class="singleData">
-          <h2>Total Reflections Earned:</h2>
-          <span class="numbersData">{{ elementsCard.TotalReflections }}</span>
-        </div> -->
-
         <div class="dataBox">
           <DataTab>
             <h3>Current Tokens:</h3>
@@ -107,13 +90,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 }
-.buttonsReflections {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-block: 20px;
-  width: 550px;
-}
+
 .buttonPresent {
   display: flex;
   flex-direction: row;
@@ -138,7 +115,6 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
   padding-inline: 50px;
   padding-block: 30px;
 }
@@ -157,16 +133,6 @@ export default defineComponent({
   padding-inline: 10px;
 }
 
-.reflectCard {
-  max-height: 800px;
-  width: 950px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-inline: 40px;
-  margin-left: 320px;
-}
 img {
   max-width: 80px;
   padding-block: 20px;
@@ -211,8 +177,42 @@ span {
   padding-top: 5px;
 }
 @media (min-width: 320px) {
+  .reflectCard {
+    max-height: 800px;
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 40px;
+    margin-left: 0;
+  }
+  .buttonsReflections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-block: 20px;
+    width: 350px;
+  }
 }
 @media (min-width: 520px) {
+  .reflectCard {
+    max-height: 800px;
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 40px;
+    margin-left: 320px;
+  }
+  .buttonsReflections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-block: 20px;
+    width: 550px;
+  }
 }
 </style>
 
