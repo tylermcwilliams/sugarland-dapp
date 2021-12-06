@@ -71,12 +71,12 @@ export default defineComponent({
   justify-content: space-evenly;
   align-items: center;
   font-weight: 600;
-  background: rgb(121, 32, 196);
-  background: linear-gradient(
-    122deg,
-    rgba(121, 32, 196, 1) 26%,
-    rgba(236, 104, 143, 1) 83%
-  );
+  background: rgba(62, 31, 100, 0.4);
+  box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding-inline: 25px;
   padding-block: 7px;
   border-radius: 10px;
@@ -104,9 +104,7 @@ h1 {
 .modalPopUp {
   max-height: 500px;
   max-width: 650px;
-  background: rgba(91, 39, 146, 0.3);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #2f2054;
   border-radius: 10px;
   display: flex;
   justify-content: center;

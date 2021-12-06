@@ -156,6 +156,11 @@ export default defineComponent({
         title: "Swap",
         icon: "https://s2.svgbox.net/materialui.svg?ic=swap_horizontal_circle&color=fff",
       },
+      {
+        page: "#",
+        title: "Pools",
+        icon: "https://s2.svgbox.net/hero-outline.svg?ic=sparkles&color=fff",
+      },
     ];
     const otherLinks = [
       {
@@ -232,7 +237,7 @@ export default defineComponent({
 
   border-radius: 10px;
   width: 200px;
-  margin-block: 20px;
+  margin-block: 10px;
   padding-block: 10px;
   padding-inline: 10px;
 }

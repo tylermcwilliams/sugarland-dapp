@@ -1,7 +1,7 @@
 <template>
   <div class="reflectCard">
     <div class="dataRefBox">
-      <h1 class="singleData">Your $Sugar Details:</h1>
+      <h1 class="singleData">Check your $Sugar Details:</h1>
 
       <div class="singleData buttonPresent">
         <input
@@ -15,13 +15,13 @@
             placeholder="Connect Your Wallet"
             @clicked="showMintingModal"
           />
-          <ButtonDefault v-else placeholder="You like Sugar, heh?" />
+
           <ButtonDefault placeholder="Check from address" />
         </div>
       </div>
 
       <div class="resutsWrapper">
-        <div class="singleData">
+        <!--         <div class="singleData">
           <h2>Current Tokens:</h2>
           <span class="numbersData">{{ elementsCard.CurrentBalance }}</span>
         </div>
@@ -36,6 +36,25 @@
         <div class="singleData">
           <h2>Total Reflections Earned:</h2>
           <span class="numbersData">{{ elementsCard.TotalReflections }}</span>
+        </div> -->
+
+        <div class="dataBox">
+          <DataTab>
+            <h3>Current Tokens:</h3>
+            <span>{{ elementsCard.CurrentBalance }}</span>
+          </DataTab>
+          <DataTab>
+            <h3>Total Purchased till date:</h3>
+            <span>{{ elementsCard.TotalPurchased }}</span>
+          </DataTab>
+          <DataTab>
+            <h3>Total Sold till date:</h3>
+            <span>{{ elementsCard.TotalSold }}</span>
+          </DataTab>
+          <DataTab>
+            <h3>Total Reflections Earned:</h3>
+            <span>{{ elementsCard.TotalReflections }}</span>
+          </DataTab>
         </div>
       </div>
     </div>
@@ -79,6 +98,9 @@ export default defineComponent({
 
 
 <style scoped>
+.dataBox {
+  margin-block: 20px;
+}
 .resutsWrapper {
   display: flex;
   flex-direction: row;
@@ -88,7 +110,9 @@ export default defineComponent({
 .buttonsReflections {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-block: 20px;
+  width: 550px;
 }
 .buttonPresent {
   display: flex;
@@ -142,12 +166,6 @@ export default defineComponent({
 
   padding-inline: 40px;
   margin-left: 320px;
-  background: rgba(62, 31, 100, 0.4);
-  box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 img {
   max-width: 80px;
@@ -172,6 +190,16 @@ h2 {
 
   white-space: nowrap;
 }
+h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+  font-style: normal;
+  line-height: 23px;
+
+  white-space: nowrap;
+}
 
 span {
   font-weight: 600;
@@ -182,6 +210,9 @@ span {
   font-style: normal;
   padding-top: 5px;
 }
+@media (min-width: 320px) {
+}
+@media (min-width: 520px) {
+}
 </style>
 
-4

@@ -29,9 +29,10 @@ export default defineComponent({
 
 <style scoped>
 .buttonDefault {
-  background: rgba(255, 225, 225, 1);
-  background: linear-gradient(179.98deg, #3d2062 0.02%, #431f64 99.98%);
+  background: rgba(62, 31, 100, 0.4);
   box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #fff;
