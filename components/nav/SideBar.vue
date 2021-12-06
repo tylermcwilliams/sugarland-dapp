@@ -227,12 +227,9 @@ export default defineComponent({
   margin-right: 5px;
 }
 .linkBox {
-  background: rgb(121, 32, 196);
-  background: linear-gradient(
-    122deg,
-    rgba(121, 32, 196, 1) 26%,
-    rgba(236, 104, 143, 1) 83%
-  );
+  background: linear-gradient(180.08deg, #463d8b -4.85%, #76468f 105.34%);
+  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.25);
+
   border-radius: 10px;
   width: 200px;
   margin-block: 20px;
@@ -288,7 +285,8 @@ p {
   margin-right: 20px;
   padding-block-start: 28px;
   transition: all ease 0.3s;
-  background: #4c147b;
+
+  background: linear-gradient(180deg, #261d48 0%, #4a2b7c 100%);
 }
 
 .sugarLogo {

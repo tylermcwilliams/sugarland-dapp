@@ -1,37 +1,35 @@
 <template>
   <div class="swapCard">
-    <PopFromShadow
-      ><div class="InnerSwap">
-        <h1 class="singleDataSwap">Swap</h1>
+    <div class="InnerSwap">
+      <h1 class="singleDataSwap">Swap</h1>
 
-        <ChooseToken></ChooseToken>
-        <!-- Primo Input -->
-        <div class="singleDataSwap">
-          <input class="inputText" type="text" placeholder="0.00" />
-        </div>
-
-        <!-- icona cambio -->
-        <div class="swapInvert">
-          <img
-            src="https://s2.svgbox.net/materialui.svg?ic=swap_vertical_circle&color=fff"
-            width="25"
-            height="25"
-          />
-        </div>
-
-        <!-- Secondo Input -->
-        <div class="singleDataSwap mb-8">
-          <input class="inputText" type="text" placeholder="0.00" />
-        </div>
-
-        <ButtonDefault
-          v-if="!active"
-          placeholder="Connect Your Wallet"
-          @clicked="showMintingModal"
-        />
-        <ButtonDefault v-else placeholder="Swap" />
+      <ChooseToken></ChooseToken>
+      <!-- Primo Input -->
+      <div class="singleDataSwap">
+        <input class="inputText" type="text" placeholder="0.00" />
       </div>
-    </PopFromShadow>
+
+      <!-- icona cambio -->
+      <div class="swapInvert">
+        <img
+          src="https://s2.svgbox.net/materialui.svg?ic=swap_vertical_circle&color=fff"
+          width="25"
+          height="25"
+        />
+      </div>
+
+      <!-- Secondo Input -->
+      <div class="singleDataSwap mb-8">
+        <input class="inputText" type="text" placeholder="0.00" />
+      </div>
+
+      <ButtonDefault
+        v-if="!active"
+        placeholder="Connect Your Wallet"
+        @clicked="showMintingModal"
+      />
+      <ButtonDefault v-else placeholder="Swap" />
+    </div>
   </div>
 </template> 
 
@@ -119,6 +117,14 @@ span {
   line-height: 23px;
   text-align: center;
   color: #fff !important;
+}
+
+.swapCard {
+  background: rgba(255, 225, 225, 1);
+  background: linear-gradient(179.98deg, #3d2062 0.02%, #431f64 99.98%);
+  box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @media (min-width: 320px) {

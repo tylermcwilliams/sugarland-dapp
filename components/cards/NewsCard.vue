@@ -30,18 +30,18 @@ export default defineComponent({
 
 <style scoped>
 .newsCard {
+  z-index: 10;
   height: 350px;
   max-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
+  background: rgba(62, 31, 100, 0.4);
+  box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
-  box-shadow: 0px 2px 20px -2px #53378d;
-  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding-inline: 30px;
   padding-block: 20px;
   margin-inline: 20px;

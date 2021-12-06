@@ -81,7 +81,7 @@ export default defineComponent({
 <style scoped>
 .resutsWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -135,18 +135,19 @@ export default defineComponent({
 
 .reflectCard {
   max-height: 800px;
-  width: 650px;
+  width: 950px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding-inline: 40px;
   margin-left: 320px;
-  background: rgba(91, 39, 146, 0.3);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(62, 31, 100, 0.4);
+  box-shadow: 0px 24px 74px rgba(37, 0, 84, 0.5);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
-  box-shadow: 0px 7px 31px -2px #3b2162;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 img {
   max-width: 80px;

@@ -73,9 +73,9 @@ export default defineComponent({
   font-weight: 600;
   background: rgb(121, 32, 196);
   background: linear-gradient(
-    302deg,
-    rgba(121, 32, 196, 1) 0%,
-    rgba(172, 103, 230, 1) 79%
+    122deg,
+    rgba(121, 32, 196, 1) 26%,
+    rgba(236, 104, 143, 1) 83%
   );
   padding-inline: 25px;
   padding-block: 7px;

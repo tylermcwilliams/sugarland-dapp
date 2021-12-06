@@ -2,7 +2,7 @@
   <div class="flex justify-center">
     <img
       class="logoSugar"
-      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/11/Logo_Dark.png"
+      src="https://www.sugarlandcoin.com/wp-content/uploads/2021/12/ExWhite.svg"
       alt=""
     />
     <!--     <img

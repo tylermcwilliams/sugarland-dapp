@@ -8,6 +8,7 @@
       overflow-x-hidden
     "
   >
+    <LoadingBar />
     <HeaderBar>
       <!-- <ColorModePicker class="fixedUP" /> -->
       <LoginCard
@@ -32,6 +33,7 @@
 </template>
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
+import LoadingBarVue from "~/components/modals/LoadingBar.vue";
 import { useConnect } from "~/composables/web3/useConnect";
 import sugarLogo from "~/components/atoms/sugarLogo.vue";
 import { useModal } from "~/composables/useModal";
@@ -45,11 +47,13 @@ import {
 } from "~/composables/toggleSidebar.ts";
 import HeaderBar from "~/components/nav/HeaderBar.vue";
 import SugarLogo from "~/components/atoms/sugarLogo.vue";
+import LoadingBar from "~/components/modals/LoadingBar.vue";
 export default defineComponent({
   components: {
     sugarLogo,
     HeaderBar,
     SugarLogo,
+    LoadingBar,
   },
   setup() {
     const { showMintingModal } = useModal();
@@ -63,6 +67,7 @@ export default defineComponent({
       sidebarWidth,
       sidebarClose,
       colorModePicker,
+      LoadingBarVue,
     };
   },
 });
@@ -148,5 +153,4 @@ body {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
 </style>
