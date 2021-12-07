@@ -1,23 +1,26 @@
 <template>
-  <section class="flex-row h-screen w-screen collectionsWrapper">
-    <div class="pb-10 py-4">
-      <div class="dataBox">
-        <DataTab>
-          <h3>Current Price:</h3>
-          <span>$ {{ SugarPrice }}</span>
-        </DataTab>
-        <DataTab>
-          <h3>Holders:</h3>
-          <span>0.00017230725</span>
-        </DataTab>
-        <DataTab>
-          <h3>Circulating:</h3>
-          <span>0.00017230725</span>
-        </DataTab>
-        <DataTab>
-          <h3>Market Cap:</h3>
-          <span>0.00017230725</span>
-        </DataTab>
+  <section class="flex-row h-screen w-screen">
+    <div class="flex-col justify-center items-center">
+      <h1 class="mt-12 insetG"></h1>
+      <div class="collectionsWrapper pb-10 py-4 flex-row">
+        <div class="dataBox flex-row">
+          <DataTab>
+            <h3>Current Price:</h3>
+            <span>$ {{ SugarPrice }}</span>
+          </DataTab>
+          <DataTab>
+            <h3>Holders:</h3>
+            <span>0.00017230725</span>
+          </DataTab>
+          <DataTab>
+            <h3>Circulating:</h3>
+            <span>{{ sugarSupply }}</span>
+          </DataTab>
+          <DataTab>
+            <h3>Market Cap:</h3>
+            <span>$ {{ sugarMarketCap }}</span>
+          </DataTab>
+        </div>
       </div>
 
       <div class="afterDataBox">
@@ -28,22 +31,21 @@
   </section>
 </template>
 
-
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import sugarPopup from "~/components/modals/sugarPopup.vue";
 import { useModal } from "~/composables/useModal";
-import sugPrice from "~/composables/getSugarPrice.ts";
+import useSugarToken from "~/composables/token/useSugarToken.ts";
 
 import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
-import ChartCard from "~/components/cards/chartCard.vue";
+import ChartCard from "~/components/cards/token/chartCard.vue";
 
 export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
 
   setup(mixins) {
-    const { SugarPrice, getSugarPrice } = sugPrice();
+    const { SugarPrice, sugarSupply, sugarMarketCap } = useSugarToken();
 
     const { showMintingModal } = useModal(sugarPopup);
 
@@ -55,7 +57,8 @@ export default defineComponent({
       NuxtSSRScreenSize,
       mixins,
       SugarPrice,
-      getSugarPrice,
+      sugarSupply,
+      sugarMarketCap,
     };
   },
   components: { PopFromShadow, ChartCard },

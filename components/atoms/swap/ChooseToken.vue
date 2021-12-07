@@ -14,7 +14,7 @@ import {
   ref,
   onBeforeMount,
 } from "@nuxtjs/composition-api";
-import listResults from "~/composables/getTokenList";
+import listResults from "~/composables/token/getTokenList";
 
 export default defineComponent({
   name: "ChooseToken",

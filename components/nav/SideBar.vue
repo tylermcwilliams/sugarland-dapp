@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import sugPrice from "~/composables/getSugarPrice.ts";
+import useSugarToken from "~/composables/token/useSugarToken";
 import { defineComponent, onMounted } from "@nuxtjs/composition-api";
 import sugarLogo from "~/components/atoms/sugarLogo.vue";
 
@@ -138,7 +138,7 @@ export default defineComponent({
     SocialCard,
   },
   setup() {
-    const { SugarPrice, getSugarPrice } = sugPrice();
+    const { SugarPrice, fetchSugarData } = useSugarToken();
 
     const utilLinks = [
       {
@@ -188,12 +188,13 @@ export default defineComponent({
     ];
 
     onMounted(() => {
+      console.info("on mounted")
       if (window.innerWidth < 520) {
         toggleSidebar();
       }
-      getSugarPrice();
+      fetchSugarData();
       window.setInterval(() => {
-        getSugarPrice();
+        fetchSugarData();
       }, 20000);
     });
 
@@ -207,7 +208,7 @@ export default defineComponent({
       sidebarWidth,
       sidebarClose,
       SugarPrice,
-      getSugarPrice,
+      fetchSugarData,
     };
   },
 });

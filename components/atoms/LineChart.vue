@@ -3,69 +3,89 @@ import { Line } from "vue-chartjs";
 
 export default {
   extends: Line,
-  data() {
-    return {
-      gradient: null,
-    };
+  props: ["labels", "data"],
+  watch: {
+    $props: {
+      handler() {
+        const { chartData, chartOptions } = this.buildChart(
+          this.$refs.canvas,
+          this.labels.list,
+          this.data.list
+        );
+        this.renderChart(chartData, chartOptions);
+      },
+      deep: true,
+    },
   },
-  mounted() {
-    this.gradient = this.$refs.canvas
-      .getContext("2d")
-      .createLinearGradient(0, 0, 0, 450);
+  methods: {
+    buildChart: (canvas, labels, data) => {
+      const gradient = canvas
+        .getContext("2d")
+        .createLinearGradient(0, 0, 0, 450);
 
-    this.gradient.addColorStop(0, "rgba(121,32,196,0.6)");
-    this.gradient.addColorStop(1, "rgba(236,104,143,0.7)");
+    gradient.addColorStop(0, "rgba(121,32,196,0.6)");
+    gradient.addColorStop(1, "rgba(236,104,143,0.7)");
 
-    this.renderChart(
-      {
-        labels: [
-          "3:00 AM",
-          "6:00 AM",
-          "9:00 AM",
-          "12:00 AM",
-          "3:00 PM",
-          "6:00 AM",
-          "9:00 AM",
-        ],
+      const chartData = {
+        labels,
         datasets: [
           {
             fill: "origin",
             label: "$Sugar Price",
-            data: [2, 10, 5, 9, 0, 6, 20],
-            backgroundColor: this.gradient,
+            data,
+            backgroundColor: gradient,
             borderColor: "rgba(255, 255, 255, 0.4)",
             pointBackgroundColor: "rgba(255, 255, 255, 1)",
           },
         ],
-      },
-      {
+      };
+      const chartOptions = {
         responsive: true,
         maintainAspectRatio: false,
         legend: {
           display: false,
         },
         scales: {
-          x: {
-            grid: {
-              color: "transparent",
-              borderWidth: 10,
-              display: false,
-              tickWidth: 0,
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                callback: function (value, index, values) {
+
+                  return value.toFixed(10);
+                },
+              },
             },
-          },
-          y: {
-            grid: {
-              display: false,
-            },
-          },
+          ],
         },
         title: {
           display: false,
           text: "Sugarland Chart",
         },
-      }
+      };
+
+      return {
+        chartData,
+        chartOptions,
+      };
+    },
+  },
+  mounted() {
+    const { chartData, chartOptions } = this.buildChart(
+      this.$refs.canvas,
+      this.labels.list,
+      this.data.list
     );
+    this.renderChart(chartData, chartOptions);
   },
 };
 </script>
-

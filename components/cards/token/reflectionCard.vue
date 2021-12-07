@@ -47,7 +47,7 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
-import PopFromShadow from "../atoms/popFromShadow.vue";
+import PopFromShadow from "../../atoms/popFromShadow.vue";
 import ButtonDefault from "~/components/atoms/ButtonDefault.vue";
 import LoginPopup from "~/components/modals/LoginPopup.vue";
 import { useModal } from "~/composables/useModal";

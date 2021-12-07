@@ -15,10 +15,6 @@ export default defineComponent({
 });
 </script>
 
-
-
-
-
 <style scoped>
 img {
   max-width: 80px;
