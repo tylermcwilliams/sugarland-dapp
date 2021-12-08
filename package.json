@@ -6,6 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "typechain": "typechain --target ethers-v5 --out-dir ./typechain './abi/*.json'",
     "generate": "nuxt generate"
   },
   "dependencies": {
@@ -30,6 +31,12 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/tailwindcss": "^4.2.0",
-    "postcss": "^8.3.5"
+    "@typechain/ethers-v5": "^8.0.5",
+    "@walletconnect/web3-provider": "^1.6.6",
+    "ethers": "^5.5.2",
+    "moralis": "^0.0.149",
+    "postcss": "^8.3.5",
+    "typechain": "^6.0.5",
+    "walletlink": "^2.2.10"
   }
 }

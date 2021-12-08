@@ -8,6 +8,7 @@
           class="inputText"
           type="text"
           placeholder="Your wallet Address"
+          v-model="inputAddress"
         />
         <div class="buttonsReflections">
           <ButtonDefault
@@ -16,7 +17,7 @@
             @clicked="showMintingModal"
           />
 
-          <ButtonDefault placeholder="Check from address" />
+          <ButtonDefault @clicked="handleAddressInput" placeholder="Check from address" />
         </div>
       </div>
 
@@ -24,19 +25,19 @@
         <div class="dataBox">
           <DataTab>
             <h3>Current Tokens:</h3>
-            <span>{{ elementsCard.CurrentBalance }}</span>
+            <span>{{ balance }}</span>
           </DataTab>
           <DataTab>
             <h3>Total Purchased till date:</h3>
-            <span>{{ elementsCard.TotalPurchased }}</span>
+            <span>{{ bought }}</span>
           </DataTab>
           <DataTab>
             <h3>Total Sold till date:</h3>
-            <span>{{ elementsCard.TotalSold }}</span>
+            <span>{{ sold }}</span>
           </DataTab>
           <DataTab>
             <h3>Total Reflections Earned:</h3>
-            <span>{{ elementsCard.TotalReflections }}</span>
+            <span>{{ reflections }}</span>
           </DataTab>
         </div>
       </div>
@@ -45,31 +46,62 @@
 </template> 
 
 <script>
-import { defineComponent, ref } from "@nuxtjs/composition-api";
+import { defineComponent, onMounted, reactive, ref, useContext } from "@nuxtjs/composition-api";
 import { useWeb3 } from "@instadapp/vue-web3";
 import PopFromShadow from "../../atoms/popFromShadow.vue";
 import ButtonDefault from "~/components/atoms/ButtonDefault.vue";
 import LoginPopup from "~/components/modals/LoginPopup.vue";
 import { useModal } from "~/composables/useModal";
+import useSugarToken from "~/composables/token/useSugarToken";
+import {BigNumber, ethers} from "ethers"
 
 export default defineComponent({
   name: "reflectionCard",
-
   setup(props) {
-    const { active } = useWeb3();
-    const elementsCard = ref({
-      CurrentBalance: 10000,
-      TotalPurchased: 10000,
-      TotalSold: 10000,
-      TotalReflections: 10000,
-    });
+    const { $moralis } = useContext()
+    const { active, account } = useWeb3();
     const { showMintingModal } = useModal(LoginPopup);
+    const { fetchSugarBalance, fetchSugarReflections } = useSugarToken()
+
+    const balance = ref(0)
+    const reflections = ref(0)
+    const bought = ref(0)
+    const sold = ref(0)
+
+    const inputAddress = ref("")
+
+    onMounted(async ()=>{
+      console.info("tr", props)
+      if(!active.value) return
+      fetchAddressStats(account.value)
+    })
+
+    async function handleAddressInput() {
+      console.info(inputAddress)
+      return await fetchAddressStats(inputAddress.value)
+    }
+
+    async function fetchAddressStats(address) {
+      if(!ethers.utils.isAddress(address)) return
+
+      const bal =  await fetchSugarBalance(address)
+      const res = await $moralis.Cloud.run("get_user_t_balance", {address})
+      balance.value = Number.parseFloat(ethers.utils.formatUnits(bal.toString(), 9)).toFixed(3)
+      reflections.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from(bal).sub(BigNumber.from("0x" + res.total)).toString(),9)).toFixed(3)
+      bought.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from("0x"+res.bought), 9)).toFixed(3);
+      sold.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from("0x"+res.sold), 9)).toFixed(3);
+    } 
 
     return {
-      elementsCard,
+      balance,
+      reflections,
+      bought,
+      sold,
       active,
       ButtonDefault,
       showMintingModal,
+      handleAddressInput,
+      inputAddress
     };
   },
   components: { PopFromShadow },

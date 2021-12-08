@@ -29,7 +29,8 @@
       "@types/node",
       "@nuxtjs/color-mode",
 
-    ]
+    ],
+    "resolveJsonModule": true,
   },
   "exclude": [
     "node_modules",
