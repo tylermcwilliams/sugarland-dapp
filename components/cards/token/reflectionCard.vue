@@ -73,7 +73,7 @@ export default defineComponent({
     onMounted(async ()=>{
       console.info("tr", props)
       if(!active.value) return
-      fetchAddressStats(account.value)
+      fetchAddressStats(account.value.toLowerCase())
     })
 
     async function handleAddressInput() {
@@ -86,8 +86,9 @@ export default defineComponent({
 
       const bal =  await fetchSugarBalance(address)
       const res = await $moralis.Cloud.run("get_user_t_balance", {address})
+      const reflTot = BigNumber.from("0x"+res.totalOut).add(bal).sub(BigNumber.from("0x"+res.totalIn))
       balance.value = Number.parseFloat(ethers.utils.formatUnits(bal.toString(), 9)).toFixed(3)
-      reflections.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from(bal).sub(BigNumber.from("0x" + res.total)).toString(),9)).toFixed(3)
+      reflections.value = Number.parseFloat(ethers.utils.formatUnits(reflTot,9)).toFixed(3)
       bought.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from("0x"+res.bought), 9)).toFixed(3);
       sold.value = Number.parseFloat(ethers.utils.formatUnits(BigNumber.from("0x"+res.sold), 9)).toFixed(3);
     } 
