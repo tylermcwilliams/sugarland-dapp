@@ -71,7 +71,6 @@ export default defineComponent({
     const inputAddress = ref("")
 
     onMounted(async ()=>{
-      console.info("tr", props)
       if(!active.value) return
       fetchAddressStats(account.value.toLowerCase())
     })

@@ -7,6 +7,7 @@ import SUGARTokenABI from "~/abi/SUGARToken.json"
 import walletlink from "walletlink"
 
 const SUGAR_ADDRESS = "0xa16976133d3450f78766ecaa1d743621e237e1a5"
+const SUGAR_GENESIS_BLOCK = 10227028
 
 const SugarPrice = ref(0);
 const sugarSupply = ref(0);
@@ -39,6 +40,8 @@ const useSugarToken = () => {
   }
 
   return {
+    SUGAR_ADDRESS,
+    SUGAR_GENESIS_BLOCK,
     SugarPrice,
     sugarMarketCap,
     sugarSupply,

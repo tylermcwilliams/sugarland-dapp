@@ -10,7 +10,7 @@
           </DataTab>
           <DataTab>
             <h3>Holders:</h3>
-            <span>0.00017230725</span>
+            <span>{{ total_holders }}</span>
           </DataTab>
           <DataTab>
             <h3>Circulating:</h3>
@@ -32,7 +32,12 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  useContext,
+} from "@nuxtjs/composition-api";
 import PopFromShadow from "~/components/atoms/popFromShadow.vue";
 import sugarPopup from "~/components/modals/sugarPopup.vue";
 import { useModal } from "~/composables/useModal";
@@ -45,20 +50,47 @@ export default defineComponent({
   mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
 
   setup(mixins) {
-    const { SugarPrice, sugarSupply, sugarMarketCap } = useSugarToken();
+    const { $moralis } = useContext();
+    const {
+      SugarPrice,
+      sugarSupply,
+      sugarMarketCap,
+      SUGAR_ADDRESS,
+      SUGAR_GENESIS_BLOCK,
+    } = useSugarToken();
 
     const { showMintingModal } = useModal(sugarPopup);
 
     let Details = ref([mixins]);
 
+    const total_holders = ref(0);
+
+    onMounted(async () => {
+      await $moralis.initPlugins();
+      const changesInHolders = {
+        chainId: 56,
+        contractAddress: SUGAR_ADDRESS,
+        blockHeight: 13305200,
+        pageSize: 10000,
+        // endingBlock: (SUGAR_GENESIS_BLOCK * 2).toString(),
+      };
+
+      const holders = await $moralis.Plugins.covalent.getBlockTokenHolders(
+        changesInHolders
+      );
+
+      total_holders.value = holders.data.items.length;
+    });
+
     return {
-      Details,
       showMintingModal,
+      Details,
       NuxtSSRScreenSize,
       mixins,
       SugarPrice,
       sugarSupply,
       sugarMarketCap,
+      total_holders,
     };
   },
   components: { PopFromShadow, ChartCard },
