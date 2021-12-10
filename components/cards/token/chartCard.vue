@@ -8,7 +8,13 @@
 /* import { onMounted } from "@nuxtjs/composition-api"; */
 import LineChart from "~/components/atoms/LineChart.vue";
 import PopFromShadow from "../../atoms/popFromShadow.vue";
-import { defineComponent, onMounted, reactive, ref, useFetch } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  onMounted,
+  reactive,
+  ref,
+  useFetch,
+} from "@nuxtjs/composition-api";
 import useCoingecko from "~/composables/useCoingecko";
 
 export default defineComponent({
@@ -20,17 +26,17 @@ export default defineComponent({
   setup() {
     const { fetchCoinChart } = useCoingecko();
 
-    const labels = reactive({list:[]});
-    const prices = reactive({list:[]});
+    const labels = reactive({ list: [] });
+    const prices = reactive({ list: [] });
 
     useFetch(async () => {
       const chartData = await fetchCoinChart("sugarland");
-      const timestamps = []
+      const timestamps = [];
       prices.list = chartData?.prices.map((e) => {
         timestamps.push(new Date(e[0]).toDateString());
         return e[1].toFixed(10);
       });
-      labels.list = timestamps
+      labels.list = timestamps;
     });
 
     return { labels, prices };

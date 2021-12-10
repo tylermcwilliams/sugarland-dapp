@@ -80,6 +80,7 @@ export default defineComponent({
   padding-inline: 25px;
   padding-block: 7px;
   border-radius: 10px;
+  color: #fff;
 }
 
 h1 {

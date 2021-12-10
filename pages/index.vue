@@ -1,26 +1,23 @@
 <template>
   <section class="flex-row h-screen w-screen">
-    <div class="flex-col justify-center items-center">
-      <h1 class="mt-12 insetG"></h1>
-      <div class="collectionsWrapper pb-10 py-4 flex-row">
-        <div class="dataBox flex-row">
-          <DataTab>
-            <h3>Current Price:</h3>
-            <span>$ {{ SugarPrice }}</span>
-          </DataTab>
-          <DataTab>
-            <h3>Holders:</h3>
-            <span>{{ total_holders }}</span>
-          </DataTab>
-          <DataTab>
-            <h3>Circulating:</h3>
-            <span>{{ sugarSupply }}</span>
-          </DataTab>
-          <DataTab>
-            <h3>Market Cap:</h3>
-            <span>$ {{ sugarMarketCap }}</span>
-          </DataTab>
-        </div>
+    <div class="collectionsWrapper py-4">
+      <div class="dataBox flex-row">
+        <DataTab>
+          <h3>Current Price:</h3>
+          <span>$ {{ SugarPrice }}</span>
+        </DataTab>
+        <DataTab>
+          <h3>Holders:</h3>
+          <span>{{ total_holders }}</span>
+        </DataTab>
+        <DataTab>
+          <h3>Circulating:</h3>
+          <span>{{ sugarSupply }}</span>
+        </DataTab>
+        <DataTab>
+          <h3>Market Cap:</h3>
+          <span>$ {{ sugarMarketCap }}</span>
+        </DataTab>
       </div>
 
       <div class="afterDataBox">
@@ -74,7 +71,7 @@ export default defineComponent({
       //   endingBlock: (SUGAR_GENESIS_BLOCK * 2).toString(),
       // };
 
-      const res = await $moralis.Cloud.run("get_total_holders", {})
+      const res = await $moralis.Cloud.run("get_total_holders", {});
       // const holders = await $moralis.Plugins.covalent.getBlockTokenHolders(
       //   changesInHolders
       // );
@@ -118,6 +115,7 @@ h1 {
   font-weight: 400;
   text-align: center;
   line-height: 1.8;
+  color: #fff;
 }
 h3 {
   font-family: "Montserrat", sans-serif;
@@ -160,6 +158,9 @@ span {
     padding-inline: 40px;
   }
   .collectionsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-block: 40px;
     margin-inline-start: 0;
   }
@@ -191,13 +192,14 @@ span {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-block-start: 110px;
+    margin-block-start: 40px;
     margin-block-end: 20px;
   }
   .afterDataBox {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-inline-start: -25px;
   }
 }
 </style>
