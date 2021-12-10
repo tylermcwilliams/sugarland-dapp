@@ -61,4 +61,8 @@ export default {
     },
   },
   target: "static",
+  publicRuntimeConfig: {
+    moralis_key: process.env.MORALIS_KEY,
+    moralis_url: process.env.MORALIS_URL
+  }
 };
