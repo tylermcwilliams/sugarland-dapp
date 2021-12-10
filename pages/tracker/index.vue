@@ -92,9 +92,7 @@ ul {
   }
   .collectionsWrapper {
     display: flex;
-    flex-direction: row;
     align-items: center;
-
   }
   .insetG {
     margin-left: 280px;
